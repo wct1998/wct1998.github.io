@@ -16,7 +16,7 @@
 <meta property="og:description" content="xswl 输入输出都整不明白害搁这投技术岗呢">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-04-25T15:54:08.000Z">
-<meta property="article:modified_time" content="2021-04-26T04:07:33.711Z">
+<meta property="article:modified_time" content="2021-04-26T04:11:55.314Z">
 <meta property="article:author" content="CT.W">
 <meta property="article:tag" content="笔试">
 <meta property="article:tag" content="数分">
@@ -221,12 +221,12 @@
 
 <hr>
 <p>思考一下，如果给定音名和音符，怎么求他在所有音符里的排位？不打字母表怎么做？ leetcode上类似的简单题。<br><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/roman-to-integer/">13. 罗马数字转整数</a><br><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/excel-sheet-column-number/">171. Excel表列序号</a></p>
-<h3 id="2-第k个后继"><a href="#2-第k个后继" class="headerlink" title="2. 第k个后继"></a>2. 第k个后继</h3><p>题目描述：（名字和一些忘了，记录一下大意）</p>
+<h3 id="2-第k个后继"><a href="#2-第k个后继" class="headerlink" title="2. 第k个后继"></a>2. 第k个后继</h3><p>题目描述：（名字和一些细节忘了，记录一下大意）</p>
 <blockquote>
 <p>字母a的第1个后继是b，第2个后继是c，第3个后继是d，以此类推。规定z的后继是a。现给定一个长度为n的字符串（仅包含a-z），其中l,r闭区间内的字母经过了k次后继操作，求原字符串</p>
 </blockquote>
 <hr>
-<p>输入输出描述：（样例已往，自己编）</p>
+<p>输入输出描述：（样例忘了，自己编）</p>
 <blockquote>
 <p>第一行一个长度为n字符串，第二行为一个整数q表示查询次数。接下来q行，每行输入3个整数l,r,k，表示该字符串在闭区间l,r上做过k次后继操作。其中l一定小于r，对于每个查询，输出一行，表示对应的原字符串。</p>
 </blockquote>
@@ -235,7 +235,7 @@
 
 <h3 id="第3、4题忘了，只记得第四题好像是动规"><a href="#第3、4题忘了，只记得第四题好像是动规" class="headerlink" title="第3、4题忘了，只记得第四题好像是动规"></a>第3、4题忘了，只记得第四题好像是动规</h3><h3 id="5-小明搭积木"><a href="#5-小明搭积木" class="headerlink" title="5.小明搭积木"></a>5.小明搭积木</h3><p>题目描述：</p>
 <blockquote>
-<p>小明喜欢搭积木。有一天他用一些边长相同的正方体来搭积木。他搭了一排“高塔”，每一座高塔都是由若干个正方体积木一个一个向上累加搭成的。也就是说每座高塔都是1<em>1</em>h的长方体（假设正方体积木的边长为1）。一共有n座高塔，每座高塔高度为hi。现在小明觉得有些塔搭的太高了，而有些又太矮了，所以他想推到一些塔，使得剩下的高塔中，最高的塔的高度小于等于最矮的塔的高度的两倍。但是这些塔都是小明辛辛苦苦搭成的，所以小明想推倒尽量少的塔来满足这个要求。你能写一个程序判断小明最小需要推到多少塔码？</p>
+<p>小明喜欢搭积木。有一天他用一些边长相同的正方体来搭积木。他搭了一排“高塔”，每一座高塔都是由若干个正方体积木一个一个向上累加搭成的。也就是说每座高塔都是1<em>1</em>h的长方体（假设正方体积木的边长为1）。一共有n座高塔，每座高塔高度为hi。现在小明觉得有些塔搭的太高了，而有些又太矮了，所以他想推倒一些塔，使得剩下的高塔中，最高的塔的高度小于等于最矮的塔的高度的两倍。但是这些塔都是小明辛辛苦苦搭成的，所以小明想推倒尽量少的塔来满足这个要求。你能写一个程序判断小明最小需要推倒多少塔吗？</p>
 </blockquote>
 <hr>
 <p>输入与输出描述：</p>
@@ -243,7 +243,7 @@
 <p>输入：<br>第一行一个整数n,表示塔的数量<br>第二行n个整数，表示每座塔的高度<br>1&lt;=n&lt;=100000,1&lt;=hi&lt;=5000<br>输出一个整数，表示小明最少推倒的塔的数量<br>无样例</p>
 </blockquote>
 <hr>
-<h4 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h4><p>看到n的范围就知道暴力肯定不可能了。再看题意，他要使得塔高更平均，因此可以推倒过矮的塔也可以推倒过高的塔。因而答案或许只有动态规划，我暂时没有思路。不过我有几个骗分思路，面向测试用例编程。总有一些测试用例只推倒高塔或矮塔就可。</p>
+<h4 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h4><p>看到n的范围就知道暴力肯定不可能了。再看题意，他要使得塔高更平均，因此可以推倒过矮的塔也可以推倒过高的塔。因而答案或许只有动态规划，我暂时没有思路。不过我有几个骗分思路，面向测试用例编程。总有一些测试用例只推倒高塔或矮塔就可。此外，题目要求推倒塔，而不是积木，如果是推倒积木更难。</p>
 <hr>
 <p>骗分思路一：快排，最坏时间复杂度O(n^2)，得到最大高度为h0*2,然后从后往前找大于最大高度的塔。这样总体就是O(n^2)。不知道会不会超时（大概率超）。</p>
 <hr>
@@ -534,6 +534,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">leetcode</a>
               </li>
              
@@ -543,10 +547,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">双指针</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
