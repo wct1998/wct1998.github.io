@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://github.com/wct1998/wct1998.github.io">
   <title>美好的一天从不会做简单题开始，leetcode326三次幂 | A cabbage&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="题目描述 给定一个整数，写一个函数来判断它是否是 3 的幂次方。如果是，返回 true ；否则，返回 false 。整数 n 是 3 的幂次方需满足：存在整数 x 使得 n &#x3D;&#x3D; 3^x,  -2^31-1&lt;&#x3D;n&lt;&#x3D;2^31-1（啊这）  分析：二分查找没想那么多，直接二分查找 12345678910111213141516171819202122class Solution &amp;#12">
+  <meta name="description" content="题目描述 给定一个整数，写一个函数来判断它是否是 3 的幂次方。如果是，返回 true ；否则，返回 false 。整数 n 是 3 的幂次方需满足：存在整数 x 使得 n &#x3D;&#x3D; 3^x,  -2^31-1&lt;&#x3D;n&lt;&#x3D;2^31-1（啊这）">
 <meta property="og:type" content="article">
 <meta property="og:title" content="美好的一天从不会做简单题开始，leetcode326三次幂">
 <meta property="og:url" content="https://github.com/wct1998/wct1998.github.io/2021/04/27/leetcode-326/index.html">
 <meta property="og:site_name" content="A cabbage&#39;s Blog">
-<meta property="og:description" content="题目描述 给定一个整数，写一个函数来判断它是否是 3 的幂次方。如果是，返回 true ；否则，返回 false 。整数 n 是 3 的幂次方需满足：存在整数 x 使得 n &#x3D;&#x3D; 3^x,  -2^31-1&lt;&#x3D;n&lt;&#x3D;2^31-1（啊这）  分析：二分查找没想那么多，直接二分查找 12345678910111213141516171819202122class Solution &amp;#12">
+<meta property="og:description" content="题目描述 给定一个整数，写一个函数来判断它是否是 3 的幂次方。如果是，返回 true ；否则，返回 false 。整数 n 是 3 的幂次方需满足：存在整数 x 使得 n &#x3D;&#x3D; 3^x,  -2^31-1&lt;&#x3D;n&lt;&#x3D;2^31-1（啊这）">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-04-27T02:11:14.000Z">
-<meta property="article:modified_time" content="2021-04-27T03:01:10.333Z">
+<meta property="article:modified_time" content="2021-04-27T03:05:27.712Z">
 <meta property="article:author" content="CT.W">
 <meta property="article:tag" content="数学">
 <meta property="article:tag" content="递归">
@@ -200,6 +200,7 @@
         <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><blockquote>
 <p>给定一个整数，写一个函数来判断它是否是 3 的幂次方。如果是，返回 true ；否则，返回 false 。<br>整数 n 是 3 的幂次方需满足：存在整数 x 使得 n == 3^x,  -2^31-1&lt;=n&lt;=2^31-1（啊这）</p>
 </blockquote>
+<span id="more"></span>
 <h3 id="分析：二分查找"><a href="#分析：二分查找" class="headerlink" title="分析：二分查找"></a>分析：二分查找</h3><p>没想那么多，直接二分查找</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isPowerOfThree</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (n==<span class="number">1</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">if</span> (n==<span class="number">0</span> || n==<span class="number">2</span>) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="keyword">int</span> l=<span class="number">1</span>,r=n;</span><br><span class="line">        <span class="keyword">int</span> m = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(r-l&gt;<span class="number">1</span>)&#123;</span><br><span class="line">            m = (r + l)/<span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (Math.pow(<span class="number">3</span>, m) &lt; n )&#123;</span><br><span class="line">                l = m;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(Math.pow(<span class="number">3</span>, m) &gt; n)&#123;</span><br><span class="line">                r = m;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (Math.pow(<span class="number">3</span>, l)==n || Math.pow(<span class="number">3</span>, r)==n) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -514,18 +515,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">二分查找</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数组</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">排序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
@@ -542,19 +531,31 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">leetcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数组</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">双指针</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">二分查找</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">排序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">笔试</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">数分</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">leetcode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">双指针</a>
               </li>
             
             <div class="clearfix"></div>
