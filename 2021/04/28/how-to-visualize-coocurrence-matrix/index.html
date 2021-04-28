@@ -6,17 +6,41 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/wct1998/wct1998.github.io">
-  <title>Tag: sql | A cabbage&#39;s Blog</title>
+  <title>共现矩阵可视化 | A cabbage&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="富贵卷中求">
-<meta property="og:type" content="website">
-<meta property="og:title" content="A cabbage&#39;s Blog">
-<meta property="og:url" content="https://github.com/wct1998/wct1998.github.io/tags/sql/index.html">
+  <meta name="description" content="之前弄过，但是有点忘了，记录下来，以后就不用到处找了用到的软件：VantagePoint,EXCEL,Pajek,Notepad++,VOSviewer等">
+<meta property="og:type" content="article">
+<meta property="og:title" content="共现矩阵可视化">
+<meta property="og:url" content="https://github.com/wct1998/wct1998.github.io/2021/04/28/how-to-visualize-coocurrence-matrix/index.html">
 <meta property="og:site_name" content="A cabbage&#39;s Blog">
-<meta property="og:description" content="富贵卷中求">
+<meta property="og:description" content="之前弄过，但是有点忘了，记录下来，以后就不用到处找了用到的软件：VantagePoint,EXCEL,Pajek,Notepad++,VOSviewer等">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://i2.tiimg.com/736726/059a80ec45563f05.png">
+<meta property="og:image" content="http://i2.tiimg.com/736726/ecc54bf39facfe52.png">
+<meta property="og:image" content="http://i2.tiimg.com/736726/876045e51e12ffdf.png">
+<meta property="og:image" content="http://i2.tiimg.com/736726/234f789af0753060.png">
+<meta property="og:image" content="http://i2.tiimg.com/736726/5f3a324364132ff0.png">
+<meta property="og:image" content="http://i2.tiimg.com/736726/8f7cc31dc5b30e18.png">
+<meta property="og:image" content="http://i2.tiimg.com/736726/c2239b5f925ff4b7.png">
+<meta property="og:image" content="http://i2.tiimg.com/736726/367601f8bbb8be1d.png">
+<meta property="og:image" content="http://i2.tiimg.com/736726/5f0a393f74aebdd3.png">
+<meta property="og:image" content="http://i2.tiimg.com/736726/eeff2efea48c1498.png">
+<meta property="og:image" content="http://i2.tiimg.com/736726/1e4e5bf97341373f.png">
+<meta property="og:image" content="http://i2.tiimg.com/736726/82b19904266e8df2.png">
+<meta property="og:image" content="http://i2.tiimg.com/736726/320e32d3a427c941.png">
+<meta property="og:image" content="http://i2.tiimg.com/736726/32786050b29b2a60.png">
+<meta property="og:image" content="http://i2.tiimg.com/736726/a8ef050cea6bb04a.png">
+<meta property="og:image" content="http://i2.tiimg.com/736726/103a92a69d9f53e1.png">
+<meta property="og:image" content="http://i2.tiimg.com/736726/367601f8bbb8be1d.png">
+<meta property="og:image" content="http://i2.tiimg.com/736726/0996583e04ee9258.png">
+<meta property="article:published_time" content="2021-04-28T05:24:13.000Z">
+<meta property="article:modified_time" content="2021-04-28T07:06:28.457Z">
 <meta property="article:author" content="CT.W">
+<meta property="article:tag" content="可视化">
+<meta property="article:tag" content="网络分析">
+<meta property="article:tag" content="EXCEL">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://i2.tiimg.com/736726/059a80ec45563f05.png">
   
     <link rel="alternative" href="/atom.xml" title="A cabbage&#39;s Blog" type="application/atom+xml">
   
@@ -170,71 +194,240 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-how-to-visualize-coocurrence-matrix" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/04/27/leetcode-sql-177/" class="archive-article-date">
-  	<time datetime="2021-04-27T08:43:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-27</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/04/27/leetcode-sql-177/">第N高的薪水</a>
+    <h1 class="article-title" itemprop="name">
+      共现矩阵可视化
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2021/04/28/how-to-visualize-coocurrence-matrix/" class="archive-article-date">
+  	<time datetime="2021-04-28T05:24:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+      
+        <h3 id="之前弄过，但是有点忘了，记录下来，以后就不用到处找了"><a href="#之前弄过，但是有点忘了，记录下来，以后就不用到处找了" class="headerlink" title="之前弄过，但是有点忘了，记录下来，以后就不用到处找了"></a>之前弄过，但是有点忘了，记录下来，以后就不用到处找了</h3><p>用到的软件：VantagePoint,EXCEL,Pajek,Notepad++,VOSviewer等</p>
+<span id="more"></span>
+
+<h3 id="一、获取共现矩阵，初步处理"><a href="#一、获取共现矩阵，初步处理" class="headerlink" title="一、获取共现矩阵，初步处理"></a>一、获取共现矩阵，初步处理</h3><p>通过<a target="_blank" rel="noopener" href="https://www.thevantagepoint.com/">VantagePoint</a>获取共现矩阵，这里以关键词共现矩阵为例。<br><img src="http://i2.tiimg.com/736726/059a80ec45563f05.png" alt="blockchain" title="词共现矩阵"><br>一共1121个词节点</p>
+<hr>
+<p>接下来把节点名剪切到另一个EXCEL文件中备用。得到下面这样的矩阵：<br><img src="http://i2.tiimg.com/736726/ecc54bf39facfe52.png" alt="blockchain" title="词共现矩阵2"></p>
+<hr>
+<p>之后，我们还需要把对角线元素（表示词频）和空格置0，以满足pajek文件的格式要求。怎么处理呢，这里有一定的技术含量。<br>新建一个sheet2，在A1单元格输入公式：<br><code>=IF(ROW()=COLUMN(),0,Sheet1!A1)</code></p>
+<p>然后再扩充到1121^2个单元格中。扩充也有技巧，首先在sheet2中选中A1:AQC1121（表示选中矩阵中所有单元格，在左上角名称框中选，千万不要自己拖鼠标！！！），然后先向下填充,再向右填充，整个过程很快，不超过两秒钟。<br><img src="http://i2.tiimg.com/736726/876045e51e12ffdf.png" alt="blockchain" title="填充"></p>
+<hr>
+<p>之后，新建sheet3，把sheet2的内容，复制过去，再把sheet1和sheet2删了，初步处理就完成了。注意：一定只复制值！全部复制会气得想重开。<br>看看效果：<br><img src="http://i2.tiimg.com/736726/234f789af0753060.png" alt="blockchain" title="词共现矩阵3"></p>
+<h3 id="二、将excel矩阵转成-net格式的矩阵"><a href="#二、将excel矩阵转成-net格式的矩阵" class="headerlink" title="二、将excel矩阵转成.net格式的矩阵"></a>二、将excel矩阵转成.net格式的矩阵</h3><p>这一部分最重要了。<br>1.在刚刚得到的矩阵前插入两行：<br><img src="http://i2.tiimg.com/736726/5f3a324364132ff0.png" alt="blockchain" title="加入标签"></p>
+<hr>
+<p>2.把excel另存为txt格式保存。<br><img src="http://i2.tiimg.com/736726/8f7cc31dc5b30e18.png" alt="blockchain" title="另存为txt"></p>
+<hr>
+<p>3.把刚刚保存的txt文件的后缀改成net<br><img src="http://i2.tiimg.com/736726/c2239b5f925ff4b7.png" alt="blockchain" title="txt转net"></p>
+<hr>
+<p>4.打开pajek，导入刚刚改成.net后缀的文件。并保存为标准的.net格式文件<br><img src="http://i2.tiimg.com/736726/367601f8bbb8be1d.png" alt="blockchain" title="导入"><img src="http://i2.tiimg.com/736726/5f0a393f74aebdd3.png" alt="blockchain" title="保存"><br>这时候我们用文本编辑软件Notepad++打开刚刚保存的.net文件：<br><img src="http://i2.tiimg.com/736726/eeff2efea48c1498.png" alt="blockchain" title="net文件"><br>发现顶点名字初始化为v*，坐标也初始化了，我们要把他修改成关键词。这样我们在上一部分保存的节点名排上用场了。网上的方法太拉跨了，我自己想了一种新的方法。</p>
+<hr>
+<p>5.修改顶点名<br>打开保存的节点名，在B1单元格输入以下公式给词填上双引号,选中B1:B1121并向下填充。然后把B列复制到C列（只复制值），再把AB两列删了。<br><code>=&quot;&quot;&quot;&quot;&amp;A1&amp;&quot;&quot;&quot;&quot;</code></p>
+<p>看看效果：<br><img src="http://i2.tiimg.com/736726/1e4e5bf97341373f.png" alt="blockchain" title="加双引号"><br>再添加一列，向下填充等差序列，得到：<br><img src="http://i2.tiimg.com/736726/82b19904266e8df2.png" alt="blockchain" title="填充序列"><br>最后，把这两列靠左对齐，再复制到.net文件中，把默认的节点名和坐标覆盖，这里好像只能拖鼠标了。。。<br><img src="http://i2.tiimg.com/736726/320e32d3a427c941.png" alt="blockchain" title="覆盖"><br>成功了！</p>
+<hr>
+<p>6.把有向图改为有向图<br>共现矩阵是无向图，因此要在.net文件定义边的位置，将Arcs改成Edges<br><img src="http://i2.tiimg.com/736726/32786050b29b2a60.png" alt="blockchain" title="有向图"><img src="http://i2.tiimg.com/736726/a8ef050cea6bb04a.png" alt="blockchain" title="无向图"></p>
+<h3 id="三、net文件导入VOSviewer可视化"><a href="#三、net文件导入VOSviewer可视化" class="headerlink" title="三、net文件导入VOSviewer可视化"></a>三、net文件导入VOSviewer可视化</h3><p>1.基于网络文件创建映射<br><img src="http://i2.tiimg.com/736726/103a92a69d9f53e1.png" alt="blockchain" title="创建"><br>2.导入我们处理好的Pajek文件,然后一路点next和finish<br><img src="http://i2.tiimg.com/736726/367601f8bbb8be1d.png" alt="blockchain" title="导入"><br>3.大功告成！！！<br><img src="http://i2.tiimg.com/736726/0996583e04ee9258.png" alt="blockchain" title="可视化结果"></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/wechatpay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">sql</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">可视化</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网络分析</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">EXCEL</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/数据库//" class="article-tag-list-link color4">数据库</a>
+        			<a href="/categories/文献计量//" class="article-tag-list-link color5">文献计量</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://github.com/wct1998/wct1998.github.io/2021/04/28/how-to-visualize-coocurrence-matrix/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2021/04/28/leetcode-344-simple/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">leetcode344反转字符串，超简单</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B9%8B%E5%89%8D%E5%BC%84%E8%BF%87%EF%BC%8C%E4%BD%86%E6%98%AF%E6%9C%89%E7%82%B9%E5%BF%98%E4%BA%86%EF%BC%8C%E8%AE%B0%E5%BD%95%E4%B8%8B%E6%9D%A5%EF%BC%8C%E4%BB%A5%E5%90%8E%E5%B0%B1%E4%B8%8D%E7%94%A8%E5%88%B0%E5%A4%84%E6%89%BE%E4%BA%86"><span class="toc-number">1.</span> <span class="toc-text">之前弄过，但是有点忘了，记录下来，以后就不用到处找了</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E8%8E%B7%E5%8F%96%E5%85%B1%E7%8E%B0%E7%9F%A9%E9%98%B5%EF%BC%8C%E5%88%9D%E6%AD%A5%E5%A4%84%E7%90%86"><span class="toc-number">2.</span> <span class="toc-text">一、获取共现矩阵，初步处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%B0%86excel%E7%9F%A9%E9%98%B5%E8%BD%AC%E6%88%90-net%E6%A0%BC%E5%BC%8F%E7%9A%84%E7%9F%A9%E9%98%B5"><span class="toc-number">3.</span> <span class="toc-text">二、将excel矩阵转成.net格式的矩阵</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81net%E6%96%87%E4%BB%B6%E5%AF%BC%E5%85%A5VOSviewer%E5%8F%AF%E8%A7%86%E5%8C%96"><span class="toc-number">4.</span> <span class="toc-text">三、net文件导入VOSviewer可视化</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "https://github.com/wct1998/wct1998.github.io/2021/04/28/how-to-visualize-coocurrence-matrix/", 
+    sourceId: "how-to-visualize-coocurrence-matrix",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -263,9 +456,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
