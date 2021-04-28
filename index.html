@@ -172,6 +172,121 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-leetcode-344-simple" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/04/28/leetcode-344-simple/">leetcode344反转字符串，超简单</a>
+    </h1>
+  
+
+        
+        <a href="/2021/04/28/leetcode-344-simple/" class="archive-article-date">
+  	<time datetime="2021-04-28T03:19:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+      
+        <h3 id="反转字符串"><a href="#反转字符串" class="headerlink" title="反转字符串"></a>反转字符串</h3><p>hard题我唯唯诺诺，easy题我重拳出击。</p>
+<hr>
+<p>题目描述：</p>
+<blockquote>
+<p>编写一个函数，其作用是将输入的字符串反转过来。输入字符串以字符数组 char[] 的形式给出。不要给另外的数组分配额外的空间，你必须原地修改输入数组、使用 O(1) 的额外空间解决这一问题。<br>你可以假设数组中的所有字符都是 ASCII 码表中的可打印字符。</p>
+</blockquote>
+<p>输入输出描述：</p>
+<blockquote>
+<p>输入：[“h”,”e”,”l”,”l”,”o”]<br>输出：[“o”,”l”,”l”,”e”,”h”]</p>
+</blockquote>
+<h3 id="双指针，yyds"><a href="#双指针，yyds" class="headerlink" title="双指针，yyds"></a>双指针，yyds</h3><p>题目又要求O(1)空间，所以这又是个双指针的题。<br>一头一尾两个指针往前遍历，不断交换，试试看。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">reverseString</span><span class="params">(<span class="keyword">char</span>[] s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>,right= s.length-<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (right-left&gt;=<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="comment">// 如果相同就不换了</span></span><br><span class="line">            <span class="keyword">if</span> (s[left]!=s[right]) swap(s, left, right);</span><br><span class="line">            left++;</span><br><span class="line">            right--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">char</span> []s, <span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">        <span class="keyword">char</span> temp = s[x];</span><br><span class="line">        s[x] = s[y];</span><br><span class="line">        s[y] = temp;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>hhhh第一次100%</p>
+<blockquote>
+<p>执行用时：1 ms, 在所有 Java 提交中击败了100.00%的用户<br>内存消耗：45.3 MB, 在所有 Java 提交中击败了24.84%的用户</p>
+</blockquote>
+<p>内存消耗应该是交换的问题。评论区瞅瞅大佬（不看抖机灵的）。</p>
+<h3 id="评论区大佬"><a href="#评论区大佬" class="headerlink" title="评论区大佬"></a>评论区大佬</h3><p>位运算提速，节省空间：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">reverseString</span><span class="params">(<span class="keyword">char</span>[] s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = s.length;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n / <span class="number">2</span>; ++i) &#123;</span><br><span class="line">            <span class="keyword">int</span> j = n - <span class="number">1</span> - i;</span><br><span class="line">            s[i] ^= s[j];</span><br><span class="line">            s[j] ^= s[i];</span><br><span class="line">            s[i] ^= s[j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>我做过的最简单的题了。不过回忆起了通过异或运算交换的速度更快这个知识点。<br>此外，今天我还发现网站有个小bug，也不能算是bug，算是一个并发事务的难点吧。我囤了两篇博文一起发，但是分类只能读取到最后发出的文章。这让我联想起了读写锁。<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/Terry-Wu/p/8981962.html">读写锁</a><br>我的情况应该属于：</p>
+<blockquote>
+<p>第二类丢失更新(Second Update Lost)：此种更新丢失是因为更新被其他事务给覆盖了，也可以叫覆盖丢失。举个例子，两个事务同时更新count，都读取100这个初始值，事务一先更新成功并提交，count=100+1=101，事务二后更新成功并提交，count=100+1=101,由于事务二count还是从100开始增加，事务一的更新就这样丢失了。<br>多线程、并发又是一个新坑，但是必须掌握。</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">双指针</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">字符串</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/数据结构与算法//" class="article-tag-list-link color3">数据结构与算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/04/28/leetcode-344-simple/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-hadoop-deploy" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -974,11 +1089,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数分</a>
+                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -987,6 +1098,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">排序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">笔试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数分</a>
               </li>
             
             <div class="clearfix"></div>
