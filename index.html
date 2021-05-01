@@ -172,6 +172,130 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-aim-to-offer03" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/05/01/aim-to-offer03/">剑指Offer3数组中重复的数字</a>
+    </h1>
+  
+
+        
+        <a href="/2021/05/01/aim-to-offer03/" class="archive-article-date">
+  	<time datetime="2021-05-01T06:52:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+      
+        <span id="more"></span>
+
+<h3 id="题目一：找出数组中重复的数字"><a href="#题目一：找出数组中重复的数字" class="headerlink" title="题目一：找出数组中重复的数字"></a>题目一：找出数组中重复的数字</h3><blockquote>
+<p>在一个长度为 n 的数组 nums 里的所有数字都在 0～n-1 的范围内。数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。<br>输入：<br>[2, 3, 1, 0, 2, 5, 3]<br>输出：2 或 3</p>
+</blockquote>
+<h4 id="思路一：排序。O-nlogn-O-1"><a href="#思路一：排序。O-nlogn-O-1" class="headerlink" title="思路一：排序。O(nlogn) O(1)"></a>思路一：排序。O(nlogn) O(1)</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findRepeatNumber</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        q_sort(nums, <span class="number">0</span>, nums.length-<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;nums.length;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[i]==nums[i-<span class="number">1</span>])&#123;</span><br><span class="line">                <span class="keyword">return</span> nums[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">q_sort</span><span class="params">(<span class="keyword">int</span> []a,<span class="keyword">int</span> left,<span class="keyword">int</span> right)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (left&gt;=right) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">int</span> l =left;</span><br><span class="line">        <span class="keyword">int</span> r = right;</span><br><span class="line">        <span class="keyword">int</span> key = a[left];</span><br><span class="line">        <span class="keyword">while</span>(l&lt;r)&#123;</span><br><span class="line">            <span class="keyword">while</span> (l&lt;r &amp;&amp; a[r]&gt;=key) r--;</span><br><span class="line">            <span class="keyword">while</span> (l&lt;r &amp;&amp; a[l]&lt;=key) l++;</span><br><span class="line">            swap(a,l,r);</span><br><span class="line">        &#125;</span><br><span class="line">        swap(a, l, left);</span><br><span class="line">        q_sort(a, left, l-<span class="number">1</span>);</span><br><span class="line">        q_sort(a, r+<span class="number">1</span>, right);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> []a ,<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> temp = a[x];</span><br><span class="line">        a[x] = a[y];</span><br><span class="line">        a[y] = temp;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>超时</p>
+<h4 id="思路二：哈希表-O-n-O-n"><a href="#思路二：哈希表-O-n-O-n" class="headerlink" title="思路二：哈希表 O(n) O(n)"></a>思路二：哈希表 O(n) O(n)</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findRepeatNumber1</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">    Map&lt;Integer,Integer&gt; mp = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i:nums)&#123;</span><br><span class="line">        <span class="keyword">if</span> (mp.containsKey(i))&#123;</span><br><span class="line">            <span class="keyword">return</span> i;</span><br><span class="line">        &#125; <span class="keyword">else</span>&#123;</span><br><span class="line">            mp.put(i, <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>结果：</p>
+<blockquote>
+<p>执行用时：9 ms, 在所有 Java 提交中击败了17.24%的用户<br>内存消耗：47.3 MB, 在所有 Java 提交中击败了37.76%的用户。</p>
+</blockquote>
+<h4 id="思路三：比较下标（书上的思路）-O-n-O-1"><a href="#思路三：比较下标（书上的思路）-O-n-O-1" class="headerlink" title="思路三：比较下标（书上的思路） O(n) O(1)"></a>思路三：比较下标（书上的思路） O(n) O(1)</h4><blockquote>
+<p>数组的数字都在0~n-1范围内。如果这个数组没有重复的数字，那么当数组排序之后数字i将出现在下标为i的位置。由于数组中有重复的数字，有些位置可能存在多个数字，同时有些位置可能没有数字。现在让我们重排这个数组，从头到尾以此扫描数组中的每个数字。当扫描到下标为i的数字时，首先比较这个数字（用m表示）是不是等于i。如果是，则扫描下一个数字。如果不是，再拿他和第m个数字进行比较。如果他和第m个数字相等，就找到了一个重复的数字;如果他和第m个数字不相等，就把第i个数字和第m个数字交换，把m放到属于它的位置。重复这个比较、交换的过程，直到发现一个重复的数字。</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findRepeatNumber</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums.length&lt;=<span class="number">1</span>) <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums.length;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (i==nums[i]) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (nums[i]==nums[nums[i]]) <span class="keyword">return</span> nums[i];</span><br><span class="line">                <span class="keyword">else</span>&#123;</span><br><span class="line">                    swap(nums, nums[i], i);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> []a ,<span class="keyword">int</span> x, <span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> temp = a[x];</span><br><span class="line">        a[x] = a[y];</span><br><span class="line">        a[y] = temp;</span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>结果快了很多</p>
+<blockquote>
+<p>执行用时：1 ms, 在所有 Java 提交中击败了84.01%的用户<br>内存消耗：46.2 MB, 在所有 Java 提交中击败了65.54%的用户。</p>
+</blockquote>
+<h3 id="题目二：不修改数组找出重复的数字"><a href="#题目二：不修改数组找出重复的数字" class="headerlink" title="题目二：不修改数组找出重复的数字"></a>题目二：不修改数组找出重复的数字</h3><blockquote>
+<p>在一个长度为 n+1 的数组 nums 里的所有数字都在 1～n 的范围内。数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字,但不能修改数组。例如：输入是2，3，5，4，3，2，6，7 则输出2或3。</p>
+</blockquote>
+<h4 id="思路：二分查找时间换空间-O-nlongn-O-1"><a href="#思路：二分查找时间换空间-O-nlongn-O-1" class="headerlink" title="思路：二分查找时间换空间 O(nlongn) O(1)"></a>思路：二分查找时间换空间 O(nlongn) O(1)</h4><p>把1<del>n的数字从中间的数字m分成两部分，前面一半为1</del>m，后面一半为m+1<del>n。如果1</del>m的数字的数目超过m,那么这部分的数字一定有重复；否则另一半区间里一定包含重复数字。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span></span>&#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findRepeatNumber3</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums.length&lt;=<span class="number">1</span>) <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> start = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> end = nums.length-<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(end&gt;=start)&#123;</span><br><span class="line">            <span class="keyword">int</span> middle = ((end-start)&gt;&gt;<span class="number">1</span>) + start;</span><br><span class="line">            <span class="keyword">int</span> count = countRange(nums,start,middle);</span><br><span class="line">            <span class="keyword">if</span> (end==start)&#123;</span><br><span class="line">                <span class="keyword">if</span> (count&gt;<span class="number">1</span>)</span><br><span class="line">                    <span class="keyword">return</span> start;</span><br><span class="line">                <span class="keyword">else</span> </span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (count&gt;(middle-start+<span class="number">1</span>))</span><br><span class="line">                end = middle;</span><br><span class="line">            <span class="keyword">else</span> </span><br><span class="line">                start = middle+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">countRange</span><span class="params">(<span class="keyword">int</span>[] nums,<span class="keyword">int</span> start,<span class="keyword">int</span> end)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (nums.length==<span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums.length;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[i]&gt;=start &amp;&amp; nums[i]&lt;=end)&#123;</span><br><span class="line">                ++count;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意：这种方法找不出所有重复数字。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>看需求，是要时间优先还是空间优先？是否能改动数组？是否要找出所有重复数字？</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">剑指Offer</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数组</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/数据结构与算法//" class="article-tag-list-link color3">数据结构与算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/05/01/aim-to-offer03/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-leetcode2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -970,15 +1094,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数组</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">双指针</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">leetcode</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数组</a>
         		</li>
       		
 		</ul>
@@ -1029,95 +1153,10 @@
 
 
   
-    <article id="post-interview-experience-of-Bytedance" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/04/24/interview-experience-of-Bytedance/">字节跳动算法日常实习生凉经</a>
-    </h1>
-  
-
-        
-        <a href="/2021/04/24/interview-experience-of-Bytedance/" class="archive-article-date">
-  	<time datetime="2021-04-24T08:57:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-      
-        <h3 id="JD如图"><a href="#JD如图" class="headerlink" title="JD如图"></a>JD如图</h3><p><img src="http://i2.tiimg.com/736726/3fb221f703881174.jpg" alt="blockchain" title="似乎害行？"><br>有那么一瞬间感觉这要求好像不高？没想那么多就投了。（4月16日投的）<br>投完发现这个要求不是一般的高。。。<br>果然，初筛没过：<br><img src="http://i2.tiimg.com/736726/9d85eb10c6444afd.png" alt="blockchain" title="不意外"><br>然而周一下午接到字节HR电话了，约了周五面试（23号），看来是捞了我，那就试一下吧。（小哥哥声音超好听）</p>
-        
-          <a class="article-more-a" href="/2021/04/24/interview-experience-of-Bytedance/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/凉经//" class="article-tag-list-link color3">凉经</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/04/24/interview-experience-of-Bytedance/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+    </nav>
   
 
 
@@ -1218,6 +1257,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">剑指Offer</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数组</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">hadoop</a>
               </li>
              
@@ -1235,6 +1282,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">EXCEL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1258,10 +1309,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">sql</a>
               </li>
              
@@ -1271,10 +1318,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">leetcode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数组</a>
               </li>
              
               <li class="article-tag-list-item">
