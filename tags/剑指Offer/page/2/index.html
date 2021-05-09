@@ -6,25 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/wct1998/wct1998.github.io">
-  <title>美团笔试最后一题题解 | A cabbage&#39;s Blog</title>
+  <title>Tag: 剑指Offer | A cabbage&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="写完上篇凉经咨询了一位BUPT软工大佬，5分钟内给了我他的思路">
-<meta property="og:type" content="article">
-<meta property="og:title" content="美团笔试最后一题题解">
-<meta property="og:url" content="https://github.com/wct1998/wct1998.github.io/2021/04/26/solution-of-FL/index.html">
+  <meta name="description" content="富贵卷中求">
+<meta property="og:type" content="website">
+<meta property="og:title" content="A cabbage&#39;s Blog">
+<meta property="og:url" content="https://github.com/wct1998/wct1998.github.io/tags/%E5%89%91%E6%8C%87Offer/page/2/index.html">
 <meta property="og:site_name" content="A cabbage&#39;s Blog">
-<meta property="og:description" content="写完上篇凉经咨询了一位BUPT软工大佬，5分钟内给了我他的思路">
+<meta property="og:description" content="富贵卷中求">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://i1.fuimg.com/736726/44dc6b50e0944130.jpg">
-<meta property="og:image" content="http://i1.fuimg.com/736726/6255691fc2060d72.png">
-<meta property="article:published_time" content="2021-04-26T05:39:17.000Z">
-<meta property="article:modified_time" content="2021-04-26T12:23:49.829Z">
 <meta property="article:author" content="CT.W">
-<meta property="article:tag" content="数组">
-<meta property="article:tag" content="二分查找">
-<meta property="article:tag" content="排序">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://i1.fuimg.com/736726/44dc6b50e0944130.jpg">
   
     <link rel="alternative" href="/atom.xml" title="A cabbage&#39;s Blog" type="application/atom+xml">
   
@@ -178,97 +170,52 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-solution-of-FL" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      美团笔试最后一题题解
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2021" class="archive-year">2021</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2021/05/01/aim-to-offer03/" class="archive-article-date">
+  	<time datetime="2021-05-01T06:52:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-01</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2021/05/01/aim-to-offer03/">剑指Offer3数组中重复的数字</a>
     </h1>
   
 
-        
-        <a href="/2021/04/26/solution-of-FL/" class="archive-article-date">
-  	<time datetime="2021-04-26T05:39:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-      
-        <h3 id="写完上篇凉经咨询了一位BUPT软工大佬，5分钟内给了我他的思路"><a href="#写完上篇凉经咨询了一位BUPT软工大佬，5分钟内给了我他的思路" class="headerlink" title="写完上篇凉经咨询了一位BUPT软工大佬，5分钟内给了我他的思路"></a>写完上篇凉经咨询了一位BUPT软工大佬，5分钟内给了我他的思路</h3><p><img src="http://i1.fuimg.com/736726/44dc6b50e0944130.jpg" alt="blockchain" title="yyds"></p>
-<span id="more"></span>
-
-<p>回顾一遍题目：</p>
-<blockquote>
-<p>小明喜欢搭积木。有一天他用一些边长相同的正方体来搭积木。他搭了一排“高塔”，每一座高塔都是由若干个正方体积木一个一个向上累加搭成的。也就是说每座高塔都是1<em>1</em>h的长方体（假设正方体积木的边长为1）。一共有n座高塔，每座高塔高度为hi。现在小明觉得有些塔搭的太高了，而有些又太矮了，所以他想推倒一些塔，使得剩下的高塔中，最高的塔的高度小于等于最矮的塔的高度的两倍。但是这些塔都是小明辛辛苦苦搭成的，所以小明想推倒尽量少的塔来满足这个要求。你能写一个程序判断小明最小需要推倒多少塔吗？<br>第一行一个整数n,表示塔的数量<br>第二行n个整数，表示每座塔的高度<br>1&lt;=n&lt;=100000,1&lt;=hi&lt;=5000<br>输出一个整数，表示小明最少推倒的塔的数量</p>
-</blockquote>
-<p>大佬的伪代码：<br><img src="http://i1.fuimg.com/736726/6255691fc2060d72.png" alt="blockchain" title="yyds"></p>
-<p>思路：第一步排序。排序好了以后，可以用二分快速找到2倍塔高的塔所在的位置，如果这个位置是n，那就可以直接退出循环了。相当于能保留的就是中间的部分。遍历一次序列相当于把所有最大最小高度都试过了。遍历到i就是把塔i的高度当最低高度。</p>
-<hr>
-<p>我的理解：排序。排好序之后，遍历一趟，对于每个hi用二分查找快速找到高度为2*hi的位置j，那么j-i+1就是要保留的塔数。不断更新max(j-i+1)，如果找到的j是最后一个的话就直接退出循环。最小推倒的数量就是n-max(j-i+1)。Ok明白了，先复习一下二分查找。</p>
-<h3 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h3><p><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/sqrtx/">leetcode69：x的平方根，简单</a><br>ok码来了</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">tower</span></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">int</span> n = scanner.nextInt();</span><br><span class="line">        <span class="keyword">int</span> []h = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            h[i] = scanner.nextInt();</span><br><span class="line">        &#125;</span><br><span class="line">        q_sort(h,<span class="number">0</span>,n-<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">if</span> (h[<span class="number">0</span>]*<span class="number">2</span>&gt;=h[n-<span class="number">1</span>])&#123;</span><br><span class="line">            System.out.println(<span class="number">0</span>);</span><br><span class="line">            scanner.close();</span><br><span class="line">            System.exit(<span class="number">0</span>);</span><br><span class="line">        &#125; </span><br><span class="line">        <span class="keyword">int</span> max_number = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> j = binary_search(h,i,n-<span class="number">1</span>);</span><br><span class="line">            <span class="keyword">if</span> (j-i+<span class="number">1</span>&gt;max_number) max_number = j-i+<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (j==n-<span class="number">1</span>) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(n-max_number);</span><br><span class="line">        scanner.close();                </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 快排</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">q_sort</span><span class="params">(<span class="keyword">int</span> []a, <span class="keyword">int</span> left,<span class="keyword">int</span> right)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (left&gt;=right) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">int</span> l=left,r=right;</span><br><span class="line">        <span class="keyword">int</span> key = a[left];</span><br><span class="line">        <span class="keyword">while</span>(l&lt;r)&#123;</span><br><span class="line">            <span class="keyword">while</span>(l&lt;r &amp;&amp; a[r]&gt;=key) r--;</span><br><span class="line">            <span class="keyword">while</span>(l&lt;r &amp;&amp; a[l]&lt;=key) l++;</span><br><span class="line">            swap(a,l,r);</span><br><span class="line">        &#125;</span><br><span class="line">        swap(a, l, left);</span><br><span class="line">        q_sort(a, left, l-<span class="number">1</span>);</span><br><span class="line">        q_sort(a, r+<span class="number">1</span>, right);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> []a, <span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> temp = a[x];</span><br><span class="line">        a[x] = a[y];</span><br><span class="line">        a[y] = temp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 二分查找</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">binary_search</span><span class="params">(<span class="keyword">int</span> []a,<span class="keyword">int</span> left, <span class="keyword">int</span> right)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> l=left,r=right;</span><br><span class="line">        <span class="keyword">int</span> m = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> ((r-l)&gt;<span class="number">1</span>)&#123;</span><br><span class="line">            m = (l+r)/<span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (a[m]&lt;=a[left]*<span class="number">2</span>)&#123;</span><br><span class="line">                l = m;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                r = m;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> r;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>我愿称之为冲塔鬼才。<br><a target="_blank" rel="noopener" href="https://lmissher.github.io/2019/10/14/oi/">FL</a></p>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/img/wechatpay.jpg">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">剑指Offer</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数组</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">二分查找</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">排序</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -281,136 +228,20 @@
 	</div>
 
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://github.com/wct1998/wct1998.github.io/2021/04/26/solution-of-FL/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2021/04/27/leetcode-326/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          美好的一天从不会做简单题开始，leetcode326三次幂
-        
-      </div>
-    </a>
   
   
-    <a href="/2021/04/25/written-exam-of-meituan/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">美团数据研发工程师笔试凉经</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%99%E5%AE%8C%E4%B8%8A%E7%AF%87%E5%87%89%E7%BB%8F%E5%92%A8%E8%AF%A2%E4%BA%86%E4%B8%80%E4%BD%8DBUPT%E8%BD%AF%E5%B7%A5%E5%A4%A7%E4%BD%AC%EF%BC%8C5%E5%88%86%E9%92%9F%E5%86%85%E7%BB%99%E4%BA%86%E6%88%91%E4%BB%96%E7%9A%84%E6%80%9D%E8%B7%AF"><span class="toc-number">1.</span> <span class="toc-text">写完上篇凉经咨询了一位BUPT软工大佬，5分钟内给了我他的思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE"><span class="toc-number">2.</span> <span class="toc-text">二分查找</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">3.</span> <span class="toc-text">总结</span></a></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-  
-  
-  
-  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
-<script>
-  var cloudTieConfig = {
-    url: "https://github.com/wct1998/wct1998.github.io/2021/04/26/solution-of-FL/", 
-    sourceId: "solution-of-FL",
-    productKey: "true",
-    target: "cloud-tie-wrapper"
-  };
-</script>
-<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+    </div></section>
   
 
-  
-
-  
-
+    
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/tags/%E5%89%91%E6%8C%87Offer/">&amp;laquo; Prev</a><a class="page-number" href="/tags/%E5%89%91%E6%8C%87Offer/">1</a><span class="page-number current">2</span>
+    </nav>
   
 
 
@@ -440,9 +271,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
