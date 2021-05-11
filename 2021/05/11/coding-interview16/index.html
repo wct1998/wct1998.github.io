@@ -16,7 +16,7 @@
 <meta property="og:description" content="题目描述 实现 pow(x, n) ，即计算 x 的 n 次幂函数。不得使用库函数，同时不需要考虑大数问题。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-05-11T00:54:23.000Z">
-<meta property="article:modified_time" content="2021-05-11T02:13:32.801Z">
+<meta property="article:modified_time" content="2021-05-11T02:16:37.455Z">
 <meta property="article:author" content="CT.W">
 <meta property="article:tag" content="剑指Offer">
 <meta property="article:tag" content="递归">
@@ -205,7 +205,9 @@
 <h3 id="输入输出描述"><a href="#输入输出描述" class="headerlink" title="输入输出描述"></a>输入输出描述</h3><blockquote>
 <p>输入：x = 2.00000, n = 10<br>输出：1024.00000<br>输入：x = 2.10000, n = 3<br>输出：9.26100<br>输入：x = 2.00000, n = -2<br>输出：0.25000<br>解释：2^(-20) = (1/2)^2 = 1/4 = 0.25</p>
 </blockquote>
-<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>计算N次幂要用到一个重要性质：<br>$a^{n}=a^{\frac{n}{2}} \cdot a^{\frac{n}{2}} n is even$<br>$a^{n}=a^{\frac{n-1}{2}} \cdot a^{\frac{n-1}{2}} \cdot a n is odd$<br>$\frac{d}{dx}e^{ax}=ae^{ax}\quad \sum_{i=1}^{n}{(X_i - \overline{X})^2}$</p>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>计算N次幂要用到一个重要性质：</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">$</span>a<span class="built_in">^</span>&#123;n&#125;=a<span class="built_in">^</span>&#123;<span class="keyword">\frac</span>&#123;n&#125;&#123;2&#125;&#125; <span class="keyword">\cdot</span> a<span class="built_in">^</span>&#123;<span class="keyword">\frac</span>&#123;n&#125;&#123;2&#125;&#125; n is even<span class="built_in">$</span></span><br><span class="line"><span class="built_in">$</span>a<span class="built_in">^</span>&#123;n&#125;=a<span class="built_in">^</span>&#123;<span class="keyword">\frac</span>&#123;n-1&#125;&#123;2&#125;&#125; <span class="keyword">\cdot</span> a<span class="built_in">^</span>&#123;<span class="keyword">\frac</span>&#123;n-1&#125;&#123;2&#125;&#125; <span class="keyword">\cdot</span> a n is odd<span class="built_in">$</span></span><br></pre></td></tr></table></figure>
+
 <ul>
 <li>代码（书上的思路）</li>
 </ul>
