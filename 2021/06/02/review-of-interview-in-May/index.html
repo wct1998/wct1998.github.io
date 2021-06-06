@@ -6,23 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/wct1998/wct1998.github.io">
-  <title>leetcode11盛最多水的容器 | A cabbage&#39;s Blog</title>
+  <title>五月凉经汇总 | A cabbage&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="题目描述 给你 n 个非负整数 a1，a2，…，an，每个数代表坐标中的一个点 (i, ai) 。在坐标内画 n 条垂直线，垂直线 i 的两个端点分别为 (i, ai) 和 (i, 0) 。找出其中的两条线，使得它们与 x 轴共同构成的容器可以容纳最多的水。说明：你不能倾斜容器。">
+  <meta name="description" content="最近一个月太忙了，顾不上打理博客，连git命令都忘了面试连轴转，还要改论文。论文好不容易改出来了，又来下一篇（(;´༎ຶД༎ຶ&#96;) ）。不过还算有点收获，明确了自己以后想干什么（大数据开发），也拿到了个nlp算法的offer（虽然我不想卷算法了）。 先对五月份的面试做个总结吧。（笔试之后再说）。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="leetcode11盛最多水的容器">
-<meta property="og:url" content="https://github.com/wct1998/wct1998.github.io/2021/05/05/leetcode11-medium/index.html">
+<meta property="og:title" content="五月凉经汇总">
+<meta property="og:url" content="https://github.com/wct1998/wct1998.github.io/2021/06/02/review-of-interview-in-May/index.html">
 <meta property="og:site_name" content="A cabbage&#39;s Blog">
-<meta property="og:description" content="题目描述 给你 n 个非负整数 a1，a2，…，an，每个数代表坐标中的一个点 (i, ai) 。在坐标内画 n 条垂直线，垂直线 i 的两个端点分别为 (i, ai) 和 (i, 0) 。找出其中的两条线，使得它们与 x 轴共同构成的容器可以容纳最多的水。说明：你不能倾斜容器。">
+<meta property="og:description" content="最近一个月太忙了，顾不上打理博客，连git命令都忘了面试连轴转，还要改论文。论文好不容易改出来了，又来下一篇（(;´༎ຶД༎ຶ&#96;) ）。不过还算有点收获，明确了自己以后想干什么（大数据开发），也拿到了个nlp算法的offer（虽然我不想卷算法了）。 先对五月份的面试做个总结吧。（笔试之后再说）。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://i2.tiimg.com/736726/bbdb925763fbd31e.jpg">
-<meta property="article:published_time" content="2021-05-05T01:44:50.000Z">
-<meta property="article:modified_time" content="2021-05-05T02:11:28.877Z">
+<meta property="article:published_time" content="2021-06-02T09:37:28.000Z">
+<meta property="article:modified_time" content="2021-06-06T14:10:03.676Z">
 <meta property="article:author" content="CT.W">
-<meta property="article:tag" content="数组">
-<meta property="article:tag" content="双指针">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="数分">
+<meta property="article:tag" content="研发">
+<meta property="article:tag" content="秋招">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://i2.tiimg.com/736726/bbdb925763fbd31e.jpg">
   
     <link rel="alternative" href="/atom.xml" title="A cabbage&#39;s Blog" type="application/atom+xml">
   
@@ -176,20 +176,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-leetcode11-medium" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-review-of-interview-in-May" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      leetcode11盛最多水的容器
+      五月凉经汇总
     </h1>
   
 
         
-        <a href="/2021/05/05/leetcode11-medium/" class="archive-article-date">
-  	<time datetime="2021-05-05T01:44:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-05</time>
+        <a href="/2021/06/02/review-of-interview-in-May/" class="archive-article-date">
+  	<time datetime="2021-06-02T09:37:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-02</time>
 </a>
         
       </header>
@@ -198,30 +198,341 @@
       
       
       
-        <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><blockquote>
-<p>给你 n 个非负整数 a1，a2，…，an，每个数代表坐标中的一个点 (i, ai) 。在坐标内画 n 条垂直线，垂直线 i 的两个端点分别为 (i, ai) 和 (i, 0) 。找出其中的两条线，使得它们与 x 轴共同构成的容器可以容纳最多的水。<br>说明：你不能倾斜容器。</p>
-</blockquote>
+        <h3 id="最近一个月太忙了，顾不上打理博客，连git命令都忘了"><a href="#最近一个月太忙了，顾不上打理博客，连git命令都忘了" class="headerlink" title="最近一个月太忙了，顾不上打理博客，连git命令都忘了"></a>最近一个月太忙了，顾不上打理博客，连git命令都忘了</h3><p>面试连轴转，还要改论文。论文好不容易改出来了，又来下一篇（(;´༎ຶД༎ຶ`) ）。不过还算有点收获，明确了自己以后想干什么（大数据开发），也拿到了个nlp算法的offer（虽然我不想卷算法了）。</p>
+<p>先对五月份的面试做个总结吧。（笔试之后再说）。</p>
 <span id="more"></span>
-<h3 id="输入输出描述"><a href="#输入输出描述" class="headerlink" title="输入输出描述"></a>输入输出描述</h3><p>示例：<br><img src="http://i2.tiimg.com/736726/bbdb925763fbd31e.jpg" alt="blocktrain"></p>
+
+<table>
+<thead>
+<tr>
+<th>日期</th>
+<th align="center">公司/流程</th>
+<th align="center">岗位</th>
+<th align="center">方向</th>
+<th align="right">结果</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>5.7</td>
+<td align="center">360</td>
+<td align="center">算法</td>
+<td align="center">推荐</td>
+<td align="right">挂</td>
+</tr>
+<tr>
+<td>5.12</td>
+<td align="center">推想科技</td>
+<td align="center">算法</td>
+<td align="center">CV</td>
+<td align="right">Offer</td>
+</tr>
+<tr>
+<td>5.17</td>
+<td align="center">京东零售</td>
+<td align="center">算法</td>
+<td align="center">NLP</td>
+<td align="right">进二面</td>
+</tr>
+<tr>
+<td>5.18</td>
+<td align="center">阿里高德</td>
+<td align="center">数据研发</td>
+<td align="center">大数据？</td>
+<td align="right">挂</td>
+</tr>
+<tr>
+<td>5.19</td>
+<td align="center">快手</td>
+<td align="center">数据分析</td>
+<td align="center">流媒体</td>
+<td align="right">挂</td>
+</tr>
+<tr>
+<td>5.19</td>
+<td align="center">京东零售二面</td>
+<td align="center">算法</td>
+<td align="center">NLP</td>
+<td align="right">进HR面</td>
+</tr>
+<tr>
+<td>5.24</td>
+<td align="center">好未来</td>
+<td align="center">算法</td>
+<td align="center">机器学习/推荐</td>
+<td align="right">挂</td>
+</tr>
+<tr>
+<td>5.24</td>
+<td align="center">京东零售HR面</td>
+<td align="center">算法</td>
+<td align="center">NLP</td>
+<td align="right">Offer</td>
+</tr>
+<tr>
+<td>5.26</td>
+<td align="center">招银网络秋招提前批</td>
+<td align="center">数据研发</td>
+<td align="center">大数据</td>
+<td align="right">进二面</td>
+</tr>
+<tr>
+<td>6.1</td>
+<td align="center">招银网络二面+HR面</td>
+<td align="center">数据研发</td>
+<td align="center">大数据</td>
+<td align="right">大概率挂</td>
+</tr>
+</tbody></table>
+<h3 id="凉经总结"><a href="#凉经总结" class="headerlink" title="凉经总结"></a>凉经总结</h3><h4 id="360推荐算法"><a href="#360推荐算法" class="headerlink" title="360推荐算法"></a>360推荐算法</h4><p>4月中旬就投的，五月初才安排面试，估计是捞的。<br>面试官是个中年男人。<br>年代久远，我只记得清楚我哪些题答得不好了。</p>
+<ol>
+<li><p>你推荐算法的理解<br>我讲了下信息过载、二八定律、协同过滤（基于用户、物品）这些。</p>
+</li>
+<li><p>推荐算法有哪些模块？<br>这个完全没答上来，不过马上面试官转移下一个问题了。由于我不想搞算法了，所以不想深究具体答案是什么。大致分为用户、项目和算法三个模块</p>
+</li>
+<li><p>你平时用过哪些推荐系统？他们的推荐怎么样<br>我回答b站。然后推荐的都是我想看的。（这个回答太臭了）面试官：我问了好几个都说b站的推荐不好，看来你是深度用户啊。<br>这个问题，其实就要从推荐系统的角度来回答，无非是多样性、覆盖率、透明度、满意度、新颖度、惊喜度。就B站而言，其实可以说一下他推荐的透明度。比如他会告诉你为什么给你推荐这些视频（例如，关注的人赞过、点赞飙升、xxx硬币、xxx次播放等）。</p>
+</li>
+<li><p>那你觉得B站的推荐还有什么优化的方向吗？<br>我回答topN推荐的问题，b站的界面可以显示两列或者单列推荐list，我认为应该改成单列的，双列的推荐效果不好。（？？？简直臭不可闻的答案）这个问题还是得从多样性、覆盖率、透明度、满意度、新颖度、惊喜度这些角度去谈。</p>
+</li>
+<li><p>聊了聊项目。问了word2vec向量是怎么生成的，这个embedding的过程如何体现？<br>我梳理了下整个word2vec的流程，但是面试官还是不满意，他应该期望我说出神经网络模型的，于是降低了难度，问我word2vec的损失函数是什么，优化目标是什么？但我还是没有答好。（其实就是给定词的条件下其他词的生成概率最大）<br>我最终的回答是，独热编码乘以训练出来的权重向量得到对应的词向量。（算是勉强打上了，还是不精确。）显然面试官不满意，也就没有继续深入下去了。接下来问了下用过哪些损失函数，比如说逻辑回归。我回答的是交叉熵损失函数，然后说了下公式。</p>
+</li>
+<li><p>写了下快排的代码</p>
+</li>
+<li><p>面试官问我平时写代码用什么写？（估计是看到我用java了）<br>我说java。面试官问为啥不用c++呢？我说了个致命答案，我不喜欢c++的指针-&gt;用法。（简直窒息）。<br>这里的正确答案还是要从专业角度去说。其实很好回答，就说一下c++和Java的区别在哪，举两个例子就行了（比如运算符重载，计算速度，面向对象的语法，但不能说c++比java难，更不能说自己不喜欢某个细节。只能说自己比较习惯、喜欢Java的哪些特点）。然后说每个语言都有自己的价值和魅力，如果有需要，我愿意去学习自己之前不熟悉的语言。这应该就是面试官期待得到的答案。</p>
+</li>
+<li><p>出了个简单题，一个二叉树，给定一个数，求出二叉树是否有一个路径，路径上各节点权值之和是给定的这个数。<br>深度优先搜索，说了下递归的思路，都没让写代码。</p>
+</li>
+<li><p>问什么时候可以实习能实习多久</p>
+</li>
+<li><p>说一件你印象最深刻的解决一件很困难的事</p>
+</li>
+<li><p>有没有offer?<br>回答的没有。这里最好说流程中或者有希望，绝对不能说第一次面试</p>
+</li>
+<li><p>反问环节<br>职业发展，360推荐的应用场景（hao123）</p>
+</li>
+</ol>
+<p>这是第二次面试，经验还是严重不足，对于jd上的内容没有给与足够的重视。在面试完，我自我感觉还不错，因为似乎没有遇到过答不上来的问题。但其实，有这个错觉是因为面试官的水平。好的面试官善于引导和转移话题，不会让你察觉出有些问题你没答上来。此外《剑指Offer》中提到：</p>
 <blockquote>
-<p>输入：[1,8,6,2,5,4,8,3,7]<br>输出：49<br>解释：图中垂直线代表输入数组 1,8,6,2,5,4,8,3,7。在此情况下，容器能够容纳水（表示为蓝色部分）的最大值为 49</p>
+<p>如果面试官在面试的过程中逐步增大面试题的难度，那么通常对应聘者来说是一件好事，这说明应聘者一开始表现的很好，面试官对他的印象很好，并且很有兴趣看看他的水平有多深，于是进一步加大难度。与此相反的是，有些应聘者者在面试的时候很多问题都答出来了，但最终被拒。其实是因为面试官一开始问的问题他都回答的很不好，面试官已经判断他能力有限，心里已经给出了否定的答案。但为了照顾应聘者的情面，会问几个简单的问题。虽然面试者可能都答对，但前面的结果已经不会改变。</p>
 </blockquote>
-<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>显然，这是一个区间选择问题，输出答案是max((j-i)*min(ai,aj))。因此很快可以写出O(n^2)的正确但必然超时的算法：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxArea</span><span class="params">(<span class="keyword">int</span>[] height)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> max = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;height.length-<span class="number">1</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j=i+<span class="number">1</span>;j&lt;height.length;j++)&#123;</span><br><span class="line">                <span class="keyword">if</span> ((j-i)*Math.min(height[i], height[j])&gt;max)</span><br><span class="line">                    max =  (j-i)*Math.min(height[i], height[j]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="优化思路：双指针"><a href="#优化思路：双指针" class="headerlink" title="优化思路：双指针"></a>优化思路：双指针</h3><p>区间选择问题的常见思路是双指针。我们可以设立两个指针left&amp;right，left从0开始，right从lenth-1开始，然后不断减小区间，更新最大值。</p>
+<p>显然，我一开始的几个问题都没有答好。</p>
+<h4 id="推想科技CV"><a href="#推想科技CV" class="headerlink" title="推想科技CV"></a>推想科技CV</h4><p>牛客上投的，这个公司是弄医疗AI的，借助AI帮助医生分诊，算是个独角兽公司。微信语音面试，感觉挺水。<br>面试官是个比较年轻的算法研究员。</p>
 <hr>
-<p>那么问题来了，左右两个指针要怎么移动？哪个先移动，哪个后移动？我们观察这个正确答案表达式：<br>                        max((j-i)*min(ai,aj))<br>区间长度是不断减小的，因而j-i是减小的，要使(j-i)*min(ai,aj)增大，必须使得min(ai,aj)增大，因而i,j中指向更小值的指针移动。于是很容易写出下面的代码：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxArea</span><span class="params">(<span class="keyword">int</span>[] height)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>,right = height.length-<span class="number">1</span>,max = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (right&gt;left)&#123;</span><br><span class="line">            <span class="keyword">int</span> width = right-left;</span><br><span class="line">            <span class="keyword">if</span> (width*Math.min(height[left],height[right])&gt;max)&#123;</span><br><span class="line">                max = width*Math.min(height[left],height[right]);</span><br><span class="line">            &#125;                </span><br><span class="line">            <span class="keyword">if</span> (height[left]&lt;height[right]) &#123; </span><br><span class="line">                <span class="comment">//判断left right哪边高度更小，更小的那边的指针移动</span></span><br><span class="line">                left ++; </span><br><span class="line">            &#125; <span class="keyword">else</span>&#123;</span><br><span class="line">                right--;</span><br><span class="line">            &#125;            </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>问题问的都很基础，聊了聊项目中的内容。L1L2正则化，过拟合，欠拟合，采样。基本上答得上来。具体来说，面试官问的有些word2vec有些问题有点意思，加深了我对这个模型的理解。<br>首先面试官问了我为什么要把独热编码转成词向量。这其实就是问独热编码的缺点。我回答独热编码的维度很高且稀疏，然后默认词于词之间是独立的没有顺序，但实际上并不是。</p>
+<hr>
+<p>紧接着问我，假如有一个词是apple，word2vec能区分他的具体含义是什么吗？（苹果公司或单纯的水果）<br>我的回答是取决于语料库的特点。但面试官接着问如果语料库同时包含这两个含义的apple会怎样。我没答上来，面试官提示了word2vec最终只能生成一个平均的词向量，并不能区分两个含义。我补充了RNN、LSTM、Seq2Seq等能处理序列的模型。</p>
+<hr>
+<p>问我如何解决样本不平衡问题。回答了重采样（SMOTE算法）。面试官补充了几个（上采样，下采样）。还问了集成学习（boosting,bagging的区别），支持向量机的原理、优化目标，能否解决多分类问题。ROC曲线，阈值的选择。</p>
+<hr>
+<p>问了个简单的算法题：怎么快速求一个数的平方根？答：二分查找<br>反问环节就问了问公司是做什么的，然后工作内容是什么？CV行业的内卷程度（面试官说很卷）。面试官也问我能不能发顶刊（这。。。），能的话跟着导师发paper进大厂。</p>
+<p>当天下午HR就给我发Offer了，给我两天时间让我考虑考虑去不去。我问了业内大佬同学（CV、后端）了解情况。CV大佬建议我可以试试，但后端大佬坚决建议我别搞算法。于是我问了下面试官，了解了解加班的情况，结果面试官来了句：“不过我个人建议，你可以多面几个综合比较比较。好好刷leetcode发paper后面找个大厂实习，毕业找工作都不是问题。” <strong>（有内鬼，终止交易。）</strong><br>综合考虑我还是拒了这个Offer。这次面试也可以看出AI独角兽公司的困境吧。AI的红利和风口似乎已经过去，而且算法即使落地很难带来更多的营收了。就拿医疗AI来说，有些时候AI算法并不能帮到医生，样本（病例）是不平衡的（得病的病例总占少数）。医生还得先判断深度学习的预测结果是否准确。</p>
+<h4 id="京东零售nlp"><a href="#京东零售nlp" class="headerlink" title="京东零售nlp"></a>京东零售nlp</h4><p>之前投了数据研发岗，但笔试没过。5月15号被nlp这边捞了起来（比较缺人？），安排了17号的一面。<br>用京东自己的一个会议软件面试，需要共享自己的屏幕写代码。面试官是个北方人，口音有点重，听起来有点吃力。而且周围比较嘈杂（像是在公共工位）。用的京东自带的会议软件，要共享自己的屏幕在本地也代码给他看。</p>
+<ul>
+<li>一面</li>
+</ul>
+<p>有些问题我也记不清楚了，只说还有印象的问题。</p>
+<ol>
+<li>聊项目，项目的创新点是什么？</li>
+<li>L1 L2正则化</li>
+<li>损失函数，交叉熵损失函数的求导<br>这个超难，还好面试官说不方便写就算了。逃过一劫。</li>
+<li>word2vec模型</li>
+<li>LSTM RNN 序列预测<br>面试官说项目中的方法不能处理序列预测问题，问我有没有接触过这方面的模型。我提到了曾经读过LSTM应用做主题热度预测的文章，毕业论文或许要用上，于是简单聊了下这些模型，差点翻车。</li>
+<li>优化方法。 答了个SGD。没说出别的来。</li>
+<li>在项目里做了什么？</li>
+<li>问了个最长回文子串<br>这题我做过，但当时没有吃透，这次又被教育了，我博客里还写过这道题。我当时用了两种方法，滑动窗口和二维动态规划，面试的时候居然一个也不记得了。在面试官提示下写出了状态转移方程，磕磕绊绊写出来了，写了个主函数测试，还是没有处理好边界问题，结果还是不对。这时候已经写了半小时了，面试官说算了，说我写的还行。进入反问环节了。<br>下面是二维动态规划的代码</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">longestPalindrome</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> ( s == <span class="keyword">null</span> || s.equals(<span class="string">&quot;&quot;</span>) || s.length() == <span class="number">1</span>)</span><br><span class="line">        <span class="keyword">return</span> s;</span><br><span class="line">        <span class="keyword">int</span> n = s.length(),start=<span class="number">0</span>,len=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">boolean</span>[][] isPalindromic = <span class="keyword">new</span> <span class="keyword">boolean</span>[n][n];</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> ( <span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++ )</span><br><span class="line">        isPalindromic[i][i]=<span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> ( <span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n - <span class="number">1</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> ( s.charAt(i) == s.charAt(i+<span class="number">1</span>) )&#123;</span><br><span class="line">                isPalindromic[i][i+<span class="number">1</span>]=<span class="keyword">true</span>;</span><br><span class="line">                start=i;</span><br><span class="line">                len=<span class="number">2</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> ( <span class="keyword">int</span> i = n - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)&#123;</span><br><span class="line">            <span class="keyword">for</span> ( <span class="keyword">int</span> j = i + <span class="number">2</span> ; j &lt; n; j++)&#123;</span><br><span class="line">                <span class="keyword">if</span> ( isPalindromic[i+<span class="number">1</span>][j-<span class="number">1</span>] &amp;&amp; s.charAt(i) == s.charAt(j) )&#123;</span><br><span class="line">                    isPalindromic[i][j]=<span class="keyword">true</span>;</span><br><span class="line">                    <span class="keyword">if</span> ( j - i + <span class="number">1</span> &gt; len )&#123;</span><br><span class="line">                        len = j - i + <span class="number">1</span>;</span><br><span class="line">                        start = i;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> s.substring(start,start + len);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><blockquote>
-<p>执行用时：4 ms, 在所有 Java 提交中击败了79.62%的用户<br>内存消耗：52 MB, 在所有 Java 提交中击败了31.23%的用户</p>
+<p>这道题最好的办法是马拉车法，时间复杂度是O(n)，之前的博客（最长回文子串）有给出一篇博文的链接，那篇博文梳理了最长回文子串的各种方法，很清楚。</p>
+<p>9.反问环节<br>问了下这个岗位是做啥的，处理哪些业务，用到了哪些技术。</p>
+<p>本来以为没戏了，但当晚二面面试官就约了后天晚上的二面。虽然题没做出来，可能面试官觉得我编程习惯还行，会写测试代码，设计测试样例，能迅速发现问题，前面的问题答得还行，因此给了二面机会。</p>
+<hr>
+<p>经过这次面试，我发现了一个面试的墨菲定律：</p>
+<blockquote>
+<p>凡是之前刷过但没有吃透的题，在面试中都会出现，而且还做不出来。</p>
 </blockquote>
-<p>还有优化空间，看看评论区大佬的思路</p>
-<h3 id="评论区大佬"><a href="#评论区大佬" class="headerlink" title="评论区大佬"></a>评论区大佬</h3><p>看了评论区，官方题解就是双指针+移动偏小高度的指针。<br>***更加简洁的代码：from 望雪有感</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxArea</span><span class="params">(<span class="keyword">int</span>[] a)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> max = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>, j = a.length - <span class="number">1</span>; i &lt; j ; )&#123;</span><br><span class="line">        <span class="keyword">int</span> minHeight = a[i] &lt; a[j] ? a[i ++] : a[j --];</span><br><span class="line">        max = Math.max(max, (j - i + <span class="number">1</span>) * minHeight);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> max;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>引以为戒，刷题习惯要好。一定要反复刷，多总结，多动手，题目的思路要牢记。</p>
+<ul>
+<li>二面</li>
+</ul>
+<p>面试官提前时间了，很仓促的样子，直接没给我自我介绍的机会，开始问项目。而且还是不露脸电话面试，有些问题我也记不清楚了，只说还有印象的问题。我发现面试官露脸的话可以记下面试的问题，但是电话面试或者不露脸，问题就记不住了。</p>
+<ol>
+<li><p>word2vec有哪两个模型，为什么skip-gram适合文献语料库？<br>我只回答说引用了别人的观点，但没深究具体为什么。</p>
+</li>
+<li><p>优化方法有哪些？随机梯度下降有什么缺点<br>我回答了收敛到局部最优而非全局最优。然后面试官说，所有梯度下降算法都有可能出现这个问题，面试完自己去看一下。<br>后来面试完我查了下，随机梯度下降可以提升训练速度，但是会降低收敛速度，因为是摸着石头过河。</p>
+</li>
+<li><p>项目里用的模型都比较老，为什么不用bert？<br>我回答方法都是导师给定的。比较流行的方法，像是bert或者transformer我愿意学，而且毕业论文可能要用到。</p>
+</li>
+<li><p>项目涉及到的主题是什么？<br>答曰关键词术语的聚类。</p>
+</li>
+<li><p>聚类的方法是什么？说一下算法流程<br>说是快速展开法，以模块度为基准，结合了K-means算法说。但面试官指出，这个算法和K-means相比，有个初始化的问题（大致是这个意思）。然后我说具体流程记不太清楚了，只知道整个流程和K-means差不多。这个方法，改的这几篇论文里都有提到，没有熟悉。被面试官问到了，不过还好，面试官没有纠结这个点。</p>
+</li>
+<li><p>其他问题(集成学习、正则化、如何解决过拟合、欠拟合等)，常见的机器学习问题，答得还行。</p>
+</li>
+<li><p>二叉树两个节点的最近公共祖先（LCA）<br>面试官说出个简单的题吧，然后出了个这个。我问是不是LCA，面试官笑了说你是不是之前做过？我赶紧说没有，可以试试。<br>我知道这是剑指Offer最后一题，但我当时没有看到这里。我只能现想思路。我想了5分钟左右，和面试官交流了一下。深度优先搜索求出包含这两个节点的路径，然后求两个路径的交点。<br>面试官说可以，写吧。但我写着写着发现我不会存储这两个路径，时间不多了，于是我只能转而写一个如下的暴力算法：层序遍历+深搜，时间复杂度O(n^2)，面试完在leetcode上测试了下，2570+ms还能通过，就离谱。</p>
+</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> TreeNode <span class="title">lowestCommonAncestor</span><span class="params">(TreeNode root, TreeNode p, TreeNode q)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root==<span class="keyword">null</span>) <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">if</span> (root==p || root== q) <span class="keyword">return</span> root;</span><br><span class="line">        Queue&lt;TreeNode&gt; queue = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">        queue.add(root);</span><br><span class="line">        TreeNode ans = root;</span><br><span class="line">        <span class="keyword">while</span> (!queue.isEmpty()) &#123;</span><br><span class="line">            List&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">            Queue&lt;TreeNode&gt; next_queue = <span class="keyword">new</span> LinkedList();</span><br><span class="line">            <span class="keyword">for</span> (TreeNode tr:queue) &#123;</span><br><span class="line">                <span class="keyword">if</span> (tr==<span class="keyword">null</span>)</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                <span class="keyword">if</span> (isfind(tr,p)&amp;&amp;isfind(tr,q)) </span><br><span class="line">                    ans = tr;</span><br><span class="line">                next_queue.add(tr.left);</span><br><span class="line">                next_queue.add(tr.right);</span><br><span class="line">                list.add(tr.val);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (list.isEmpty()) <span class="keyword">break</span>;</span><br><span class="line">            queue = next_queue;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isfind</span><span class="params">(TreeNode root, TreeNode target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root==target) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (root==<span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> isfind(root.left,target) || isfind(root.right,target);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="从两头开始内卷，先卷了挫的那头（逃）"><a href="#从两头开始内卷，先卷了挫的那头（逃）" class="headerlink" title="从两头开始内卷，先卷了挫的那头（逃）"></a>从两头开始内卷，先卷了挫的那头（逃）</h3>
+<p>面试官说我这个方法复杂度太高了，重复计算太多，其实我一开始说的思路是次优的。我问面试官这题最优思路是什么，面试官让我之后自己看，主要是应用到后续遍历的思想。<br>后来我翻了下剑指Offer，果然书上的思路就是我的思路。墨菲定律又应验了。之前我是写过二叉树dfs路径的题的，但是还是没吃透，被面试教育了。于是按照剑指Offer思路，参考题解重新写了一遍，11ms通过。最优方法之后刷剑指Offer的时候再看。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> TreeNode <span class="title">lowestCommonAncestor</span><span class="params">(TreeNode root, TreeNode p, TreeNode q)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root==<span class="keyword">null</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">if</span> (root==p||root==q)</span><br><span class="line">            <span class="keyword">return</span> root;</span><br><span class="line">        List&lt;TreeNode&gt; path1 = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        List&lt;TreeNode&gt; path2 = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        getPath(root,p, path1);</span><br><span class="line">        getPath(root, q, path2);</span><br><span class="line">        <span class="keyword">return</span> getLCA(path1, path2);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">getPath</span><span class="params">(TreeNode root,TreeNode target, List&lt;TreeNode&gt; path)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root==<span class="keyword">null</span>)</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        path.add(root);</span><br><span class="line">        <span class="keyword">if</span> (root==target)</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">if</span> (path.get(path.size()-<span class="number">1</span>)!=target)</span><br><span class="line">            getPath(root.left, target, path);</span><br><span class="line">        <span class="keyword">if</span> (path.get(path.size()-<span class="number">1</span>)!=target)</span><br><span class="line">            getPath(root.right, target, path);</span><br><span class="line">        <span class="keyword">if</span> (path.get(path.size()-<span class="number">1</span>)!=target)</span><br><span class="line">            path.remove(path.size()-<span class="number">1</span>);        </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> TreeNode <span class="title">getLCA</span><span class="params">(List&lt;TreeNode&gt; path1,List&lt;TreeNode&gt; path2)</span></span>&#123;</span><br><span class="line">        TreeNode last = <span class="keyword">new</span> TreeNode();</span><br><span class="line">        <span class="keyword">int</span> n = Math.min(path1.size(), path2.size());</span><br><span class="line">        TreeNode tr = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (path1.get(i)==path2.get(i))</span><br><span class="line">                tr = path1.get(i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> tr;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>写完已经面了一个小时，面试官很仓促地结束面试也没给我提问机会，于是我追问了下这个岗位的问题。本来我觉得已经凉了，但是没想到24号中午收到了当天晚上HR面试的通知。</p>
+<ul>
+<li>HR面</li>
+</ul>
+<p>HR是个声音很温柔的姐姐，但是问的问题不太温柔。<br>先是自我介绍，我觉得非技术面，说一下自己是谁就行了，所以就很简短。</p>
+<ol>
+<li>问了哪里人，是不是独生子</li>
+<li>对这个岗位的了解</li>
+<li>为啥本科没实习过</li>
+<li>以后想去哪里发展</li>
+<li>对岗位有什么理解</li>
+<li>信息管理与信息系统专业的学生有什么优势？<br>我其实觉得优势基本为0。但是回答肯定不能这么回答。我就随便说的。优势是信管专业学了沉淀了很多管理的知识，在他们工作多年后，能为他们提供帮助。劣势是，在技术岗位上工作转岗诱惑很多，可能会使得自己在错误的时机转去管理岗位。</li>
+<li>你在算法上有什么积累<br>这个问题问到我了，我本以为HR不会问技术问题，压根没准备。我寻思有啥积累，技术面的面试官没和你反映情况吗？支支吾吾的没答上来。HR提示，算法分为很多方向，有CV\NLP\推荐，你会什么？<strong>算法是有门槛的！我要找到你能胜任这个工作的理由！</strong><br>这句话真把我吓到了，于是我没有条理地说了下简历上写的项目。</li>
+<li>选择Offer的标准是什么？<br>我把薪资排最后了。</li>
+<li>然后终于进入反问环节了。<br>我问HR入职后有培训吗？然后问入职前我需要准备什么。这时候HR警觉起来，可能觉得我在套她话了，她说不用准备什么，我们还需要和之前的面试官综合评定一下，才能最终决定是否录用你。（我寻思如果技术面面试官反对的话我也进不了HR面啊）<br>其实这个地方除了说这个，还能说说高中参加NOIP的经历，包装一下自己。但是当时不太自信，有点挤牙膏，发挥的不是很好，听到HR最后一句话我就觉得可能要凉了。</li>
+</ol>
+<p>没想到居然发Offer了，这是我面试一个月以来第一个还不错的Offer。想了下还是去吧，机会难得，边实习边转开发。</p>
+<h4 id="高德数据研发"><a href="#高德数据研发" class="headerlink" title="高德数据研发"></a>高德数据研发</h4><p>KPI面</p>
+<p>面试官迟到了将近15分钟。上来问我为啥从信院考到管院，学制多少年？</p>
+<p>看到我的本科毕设用了百度地图，就逮着这个项目问。让我共享屏幕打开本科毕业论文给他讲讲。问了很久。</p>
+<p>只记住了一个比较有意思的问题。面试官问我，在你的系统里，数据审核都是人工完成的，那么如何自动审核呢？我的思路是根据现有数据集，用聚类的方法训练出一个边界来，每个树种大致分布在哪些地方、哪些位置。然后根据这些边界自动审核。扩充数据集，在不同的位置训练，提升模型的泛化能力。在一个未知的地方，就能利用这个模型来预测、检测。面试官很满意（然并卵）。</p>
+<p>然后问了我华为杯的数学建模比赛，在得知结果不好之后也没接着往下问。</p>
+<p>面试官问我项目中用到了哪些设计模式？我回答我没学过这门课，然后请求他解释一下。然后他稍微解释了一下什么是设计模式。然后我回答了个网络模式，GG。其实这里就是个陷阱，他就想问对设计模式的了解，毕竟JD上写着java和大数据了。设计模式非常重要。</p>
+<p>最后面试官让我用python 写个异常检测代码，比如遇到1-10的数字就抛出异常。</p>
+<p>？？？我写了个try except 然后就写不出来了。面试官匆匆结束了面试，并说HR会通知结果。然而至今也未收到反馈，一定是挂了。</p>
+<h4 id="快手流媒体数据分析"><a href="#快手流媒体数据分析" class="headerlink" title="快手流媒体数据分析"></a>快手流媒体数据分析</h4><p>5月7日投的简历，过了一个礼拜收到了面试通知。面试官长的很像浮光（一个三国杀电竞选手），声音也很像。在外面面试的，很吵。</p>
+<ol>
+<li><p>说一下华为杯数模竞赛，用到的方法，数据处理的流程<br>我刚说完这个问题是辛烷值损失优化，正准备说方法。面试官打断我，问我辛烷值是什么，为什么要减少它的损失？我回答辛烷值损失会降低燃烧效率，增大碳排放量。面试官说，介绍项目要从问题出发，要让面试官觉得你的项目有意义。<strong>（面试官的这个提示要牢记。）</strong> 一开始就让面试官不是太满意。</p>
+</li>
+<li><p>说一下PCA的原理、应用<br>PCA用于降维，是一种非监督分类，得到的主成分无法保留之前特征的具体意义。我试图从头开始推导，但是磕磕绊绊，于是面试官提示我从协方差的角度考虑。<br>构造标准化样本协方差矩阵，求出所有特征值，再求出使得（累计方差）贡献率达到85%以上的前d个特征值对应的特征作为“主成分”。然后面试官问我贡献率的公式是什么，我又没答上来。<br>$$<br>\eta=\frac{sum_{i=1}^d{\lambda_i}}{sum_{i=1}^n{\lambda_i}}<br>$$<br>这里面试官指出，PCA用于降维的说法并不精确。在进行数据挖掘时，我们需要对数据进行一个预处理，很重要的一个步骤就是特征选择，PCA能筛选出比较重要的特征。但是正如你提到的，PCA是一种非监督学习，不能保留原来特征的含义。</p>
+</li>
+<li><p>还知道哪些特征选择方法？<br>Lasso回归（L1正则化的线性回归），LDA（线性判别分析）。</p>
+</li>
+<li><p>说一下L1正则化，和L2正则化有啥区别？你在竞赛中用Lasso回归筛选了多少个变量？算多算少?<br>L1权值绝对值加权和，L2权值平方加权和。筛选了30个变量，算少（蒙错了）。面试官说一般来说变量在15个以内比较合适，30个算比较多的了，不过这也看个人习惯。</p>
+</li>
+<li><p>多重共线性问题是什么？如何判定？如何解决？<br>我只答出多重共线性使得参数估计值方差增大。面试官帮我回答了后两个问题，用方差膨胀因子判定，用<a target="_blank" rel="noopener" href="https://blog.csdn.net/foneone/article/details/101945415">逐步回归</a>的方法解决。</p>
+</li>
+<li><p>线性回归怎么评价效果？<br>我只能结巴的答出“三个平方和”，但说不出具体的公式。面试官的表情很难受。（总平方和，回归平方和，残差平方和）</p>
+</li>
+<li><p>支持向量机原理，最优超平面是怎么产生的？<br>SVM是一个约束最优化问题，优化目标是超平面模长平方的二分之一最小。分类间隔只与支持向量（一对离最优超平面最近且分列两侧的样本点）有关。</p>
+</li>
+<li><p>机器学习模型评价指标<br>我回答的是precision，recall，f1，accuracy，auc。不知道对不对。</p>
+</li>
+<li><p>华为杯的项目做了多久？<br>我如实回答，后面两天赶上开学，于是只做了前两天就完事了。面试官无奈的笑了，开始问我统计学知识。</p>
+</li>
+<li><p>假设检验的步骤</p>
+</li>
+<li><p>第一类错误和第二类错误分别是什么？</p>
+</li>
+<li><p>什么是AB Test？</p>
+</li>
+<li><p>假如我们要做一个问卷，如何确定样本量？<br>我试图猜，然后就被面试官打断了。面试官说我没好好学统计学，书上都有。首先确定总体的分布（研究对象的方差），再确定两类错误能接受的概率是多少（置信程度），以及误差大小（精度）。<br>样本量的计算公式如下：<br>$$<br>n=\frac{C^2*\sigma^2}{P}<br>$$</p>
+</li>
+<li><p>面试官已经对我很不满意了，开始建议我转岗。<br>聊了聊大数据、开发、java这些话题，问我想做什么。</p>
+</li>
+<li><p>sql题<br>快手app，有很多人发了小视频，视频表中有省份这个字段，要查出每个省份在某天发布但没人点赞的视频总数。<br>子查询+左连接，在面试官提示下写出来了。面试官指出mysql没有date这个函数，要用to_date。<br>(凉)</p>
+</li>
+<li><p>反问<br>问了下数分岗位是做什么的，与数据开发的区别。“数分偏策略，数据开发偏工程。”</p>
+</li>
+</ol>
+<p>这个面试官很专业，问的问题很细致，也提供了面试的建议，就是周围太吵。第一次应聘数据分析的岗位，感觉自己很不适合，所以这也是最后一次了。</p>
+<h4 id="好未来学而思机器学习算法"><a href="#好未来学而思机器学习算法" class="headerlink" title="好未来学而思机器学习算法"></a>好未来学而思机器学习算法</h4><p>面试前一天已经得知进京东HR面了，因此这个就没怎么准备，随便面的。面试官是个中年女性，比我先进面试房间，距面试还有5分钟就call我了。但是老是掉线，重进了好几次，自我介绍了卡了好几段才说完。</p>
+<ol>
+<li>集成学习 bagging boosting的特点。</li>
+<li>随机森林如何体现随机性？<br>这个我答得很烂。要结合bootstrap来讲。</li>
+<li>xgboost和梯度提升决策树有什么区别？<br>只回答了最基础的。</li>
+<li>word2vec 负采样</li>
+<li>是否了解推荐？<br>这个我直接说不了解，只知道链路预测。</li>
+<li>又开始建议我转岗了，问我是否对大数据感兴趣。先问了个mapreduce<br>举了个词频的例子</li>
+<li>数仓建模流程</li>
+<li>sql语句有哪几种连接？</li>
+<li>是否了解数据库知识，问了个唯一索引<br>数据库没复习，这个没答上来。后来才知道这就是个unique index。我直接说的不了解，面试官看起来很失望。</li>
+<li>手撕代码：非递归写出二叉树的先序遍历<br>她提示用栈，我就用栈写了，勉强写出来了，在她提示下纠正了错误。</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">preOrder</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">        List&lt;Integer&gt; ans = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">if</span> (root==<span class="keyword">null</span>) <span class="keyword">return</span> ans;</span><br><span class="line">        Stack&lt;TreeNode&gt; stack = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">        stack.push(root);</span><br><span class="line">        <span class="keyword">while</span> (!stack.isEmpty()) &#123;</span><br><span class="line">            TreeNode tr = stack.pop();</span><br><span class="line">            ans.add(tr.val);</span><br><span class="line">            <span class="comment">// 先右后左进栈</span></span><br><span class="line">            <span class="keyword">if</span> (tr.right != <span class="keyword">null</span>)</span><br><span class="line">                stack.push(tr.right);</span><br><span class="line">            <span class="keyword">if</span> (tr.left!=<span class="keyword">null</span>)</span><br><span class="line">                stack.push(tr.left);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>反问<br>问了工作内容，说是人员调度，推荐。感觉不是很有意思，自己说想换岗了。</li>
+</ul>
+<p>喜提一封感谢信。</p>
+<h4 id="招银网络数据研发"><a href="#招银网络数据研发" class="headerlink" title="招银网络数据研发"></a>招银网络数据研发</h4><ul>
+<li>技术初试<br>随便投了个提前批，提前感受下秋招。。</li>
+</ul>
+<p>面试时间很短，很多问题记不清了，只记住了以下几个：</p>
+<ol>
+<li>sigmoid函数梯度的范围,sigmoid函数梯度是否可能为0？<br>不能为0，只能无限趋近于0，面试官说这个答对了。但我没答出梯度范围。(0,0.25]</li>
+<li>是否了解Adaboost<br>只知道这是集成学习算法之一，具体是什么不太了解。</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/wangjian1204/article/details/50668929">区分bootstrap、bagging、boosting和adaboost</a><br>3. boosting 和 bagging<br>4. 手撕代码：有效的括号，简单题，但是要求用python写<br>比较简单，而且以前写过。下面的代码是我复制之前写过的，面试的时候我直接用的list来模拟栈。<br><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/valid-parentheses/">20.有效的括号</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>(<span class="params"><span class="built_in">object</span></span>):</span> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isValid</span>(<span class="params">self, s</span>):</span></span><br><span class="line">        <span class="class"><span class="keyword">class</span> <span class="title">Stack</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">            <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">                self.__<span class="built_in">list</span> = []</span><br><span class="line">        </span><br><span class="line">            <span class="function"><span class="keyword">def</span> <span class="title">is_empty</span>(<span class="params">self</span>):</span></span><br><span class="line">                <span class="keyword">return</span> self.__<span class="built_in">list</span> == []</span><br><span class="line"></span><br><span class="line">            <span class="function"><span class="keyword">def</span> <span class="title">push</span>(<span class="params">self,item</span>):</span></span><br><span class="line">                self.__<span class="built_in">list</span>.append(item)</span><br><span class="line"></span><br><span class="line">            <span class="function"><span class="keyword">def</span> <span class="title">pop</span>(<span class="params">self</span>):</span></span><br><span class="line">                <span class="keyword">if</span> self.is_empty():</span><br><span class="line">                    <span class="keyword">return</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="keyword">return</span> self.__<span class="built_in">list</span>.pop()</span><br><span class="line"></span><br><span class="line">            <span class="function"><span class="keyword">def</span> <span class="title">peek</span>(<span class="params">self</span>):</span></span><br><span class="line">                <span class="keyword">if</span> self.is_empty():</span><br><span class="line">                    <span class="keyword">return</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="keyword">return</span> self.__<span class="built_in">list</span>[-<span class="number">1</span>]         </span><br><span class="line">        </span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">matchBoth</span>(<span class="params">item1,item2</span>):</span></span><br><span class="line">            leftbrac = <span class="string">&quot;&#123;[(&quot;</span></span><br><span class="line">            rightbrac = <span class="string">&quot;&#125;])&quot;</span></span><br><span class="line">            <span class="keyword">return</span> leftbrac.index(item1) == rightbrac.index(item2)</span><br><span class="line"></span><br><span class="line">        bracketList = <span class="built_in">list</span>(s)</span><br><span class="line">        braStack = Stack()</span><br><span class="line">        leftbrac = <span class="string">&quot;&#123;[(&quot;</span></span><br><span class="line">        rightbrac = <span class="string">&quot;&#125;])&quot;</span></span><br><span class="line">        result = <span class="literal">True</span></span><br><span class="line">        <span class="keyword">for</span> item <span class="keyword">in</span> bracketList:</span><br><span class="line">            <span class="keyword">if</span> item <span class="keyword">in</span> leftbrac:</span><br><span class="line">                braStack.push(item)</span><br><span class="line">            <span class="keyword">elif</span> item <span class="keyword">in</span> rightbrac:</span><br><span class="line">                <span class="keyword">if</span> braStack.is_empty():</span><br><span class="line">                    result = <span class="literal">False</span></span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    <span class="keyword">if</span> matchBoth(braStack.peek(),item):</span><br><span class="line">                        braStack.pop()</span><br><span class="line">                    <span class="keyword">else</span>:</span><br><span class="line">                        result = <span class="literal">False</span></span><br><span class="line">        <span class="keyword">if</span> braStack.is_empty() <span class="keyword">and</span> result:</span><br><span class="line">            result = <span class="literal">True</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            result = <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>反问：</p>
+<p>招银网络在杭州、成都、深圳部门的区别</p>
+<hr>
+<p>招银网络与招银的关系？<br>说是招银负责金融业务，招银网络负责开发实现。我的理解就是外包。银行能去总行还是去总行。</p>
+<hr>
+<p>应聘岗位应用大数据的情况</p>
+<ul>
+<li>综合面试</li>
+</ul>
+<p>综合面试难度上去了，问的很广，也有深度。没背八股文很吃力。</p>
+<ol>
+<li><p>过拟合怎么解决</p>
+</li>
+<li><p>xgboost和gdbt的区别、优缺点<br>这回说的相对清楚了，但也说的不好</p>
+</li>
+<li><p>Java的IO有哪几类？<br>啊这，《java核心技术卷1》那章我没看。</p>
+</li>
+<li><p>大数据生态圈<br>分层讲了大数据的重要技术。</p>
+</li>
+<li><p>hdfs读写流程<br>我只说到datanode和namenode的作用。在读源码，还没弄懂。面试官说不用读源码</p>
+</li>
+<li><p>hive的理解<br>只知道是数据仓库语言</p>
+</li>
+<li><p>Java多态怎么实现<br>我举了个重写父类方法的例子，讲的不好，没有提到<strong>上转型</strong>。</p>
+</li>
+<li><p>mapreduce流程<br>split,map,shuffle,reduce 还是举的词频统计的例子</p>
+</li>
+<li><p>sqoop kafka<br>只知道是做什么的（hadoop与关系型数据库传输数据、消息队列）</p>
+</li>
+<li><p>双栈实现队列<br>又被墨菲定律教育了。剑指Offer原题，没有消化。<br>想了快五分钟没思路，面试官就换下一题了。<br><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/yong-liang-ge-zhan-shi-xian-dui-lie-lcof/">剑指Offer09:用两个栈实现队列</a><br>代码就不上了。主要的思路：输入放在第一个栈，输出的时候从第二个栈输出（栈2为空则把第一个栈转移到第二个栈）。</p>
+</li>
+<li><p>快速排序的思路，有什么缺点，什么情况下最坏？<br>说的是倒序的时候最坏，没答好，面试官若有所思地点了点头不知道啥意思。其实顺序、倒序和所有数字相同的情况下都有可能最坏（O（N^2））。关键在于枢轴元素只取区间最左边的，至少要说到这点才能让面试官满意。</p>
+</li>
+<li><p>对java集合的理解，比如LinkedList,ArrayList<br>只说了这几个类具体能做什么，实现什么接口，只说了自己知道的区别。没背八股文，各种集合之间的继承关系，答不上来。</p>
+</li>
+<li><p>特征选择的方法<br>只说到pca lasso lda</p>
+</li>
+<li><p>L1 L2正则化</p>
+</li>
+<li><p>如何解决样本不平衡问题？<br>上、下、重采样。用过smote算法，样本之间的连线上随机构造新样本。没有答上这个方法的缺点。</p>
+</li>
+<li><p>如何评价一个模型的好坏？<br>只说了那五个指标</p>
+</li>
+<li><p>你一搞机器学习的为什么想搞大数据开发？<br>答曰机器学习也是大数据生态圈的一部分，向往下走从事开发的工作。</p>
+</li>
+<li><p>反问<br>城市发展、不同城市部门介绍<br>大数据技术的学习路线。面试官说不用读源码，从应用的角度出发来学习就行。</p>
+</li>
+</ol>
+<p>老老实实背八股文吧。</p>
+<ul>
+<li>HR<br>有了上次的经验，这次的HR面就比较轻松了。</li>
+</ul>
+<ol>
+<li>在项目中你负责什么？</li>
+<li>为什么来招银网络？</li>
+<li>为什么想搞大数据？</li>
+<li>为什么想来成都？</li>
+<li>独生子？有对象？</li>
+<li>作息情况，未来工作的时候是否接受这样的作息（暗示加班）<br>偶尔加班可以，业务需求紧张等特殊情况加班可以理解，但长期不行，也没必要，效率还是很重要的。</li>
+<li>平时怎么学习大数据知识？</li>
+<li>反问<br>不同城市的部门有和不同？<br>招银网络和总部、信用卡中心的区别。<br>这个岗位是否需要金融专业知识？</li>
+</ol>
+<p>这三场面试下来，感觉校招会更注重应届生的知识基础、学习迁移能力和coding能力，项目只是锦上添花，如果答得不好反而会成为减分项。所以，老老实实背八股文和刷leetcode。<br>HR说尽量两周内给结果。我自我感觉应该拿不到offer。</p>
+<h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><p>推荐一本神书《百面机器学习》。就我目前面试而言，这本书的召回率达到了百分之百。换言之，面试中出现的所有机器学习问题，都可以在这本书中找到答案。西瓜书（周志华《机器学习》）、蓝皮书（李航《统计学习方法》）可以不用看完，但是《百面机器学习》一定要看完。想卷算法的卷王们，一定要看完这本书。<br>四月份投递简历很盲目，大多数是算法，投的时候还很有自信能去卷算法的。后面想转算法，却又不得不去准备算法的面试，虽然拿到了一个还可以的offer，但是耽误了学习大数据的时间。不知道是福是祸。暑期实习必然要影响秋招的准备。这样的话，我秋招应该很难拿到不错的大数据开发岗位，可能得准备春招，吃卷王吃剩的了。毕业论文还没思路，还要改老师的论文。接下来的一年，必然是高并发、多线程。</p>
+
       
 
       
@@ -260,11 +571,19 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数组</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">双指针</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数分</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">研发</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">秋招</a>
         		</li>
       		
 		</ul>
@@ -276,7 +595,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/数据结构与算法//" class="article-tag-list-link color3">数据结构与算法</a>
+        			<a href="/categories/凉经//" class="article-tag-list-link color3">凉经</a>
         		</li>
       		
 		</ul>
@@ -331,7 +650,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://github.com/wct1998/wct1998.github.io/2021/05/05/leetcode11-medium/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://github.com/wct1998/wct1998.github.io/2021/06/02/review-of-interview-in-May/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -345,18 +664,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/05/05/coding-interview07/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          剑指Offer07重建二叉树
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/05/04/coding-interview06/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">剑指Offer06从尾到头打印链表</div>
+    <a href="/2021/05/11/coding-interview17/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">剑指Offer17打印从1到最大的n位数</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -383,7 +693,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%8F%8F%E8%BF%B0"><span class="toc-number">2.</span> <span class="toc-text">输入输出描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E6%9E%90"><span class="toc-number">3.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%98%E5%8C%96%E6%80%9D%E8%B7%AF%EF%BC%9A%E5%8F%8C%E6%8C%87%E9%92%88"><span class="toc-number">4.</span> <span class="toc-text">优化思路：双指针</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C"><span class="toc-number">5.</span> <span class="toc-text">结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%84%E8%AE%BA%E5%8C%BA%E5%A4%A7%E4%BD%AC"><span class="toc-number">6.</span> <span class="toc-text">评论区大佬</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E%E4%B8%A4%E5%A4%B4%E5%BC%80%E5%A7%8B%E5%86%85%E5%8D%B7%EF%BC%8C%E5%85%88%E5%8D%B7%E4%BA%86%E6%8C%AB%E7%9A%84%E9%82%A3%E5%A4%B4%EF%BC%88%E9%80%83%EF%BC%89"><span class="toc-number">7.</span> <span class="toc-text">从两头开始内卷，先卷了挫的那头（逃）</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E8%BF%91%E4%B8%80%E4%B8%AA%E6%9C%88%E5%A4%AA%E5%BF%99%E4%BA%86%EF%BC%8C%E9%A1%BE%E4%B8%8D%E4%B8%8A%E6%89%93%E7%90%86%E5%8D%9A%E5%AE%A2%EF%BC%8C%E8%BF%9Egit%E5%91%BD%E4%BB%A4%E9%83%BD%E5%BF%98%E4%BA%86"><span class="toc-number">1.</span> <span class="toc-text">最近一个月太忙了，顾不上打理博客，连git命令都忘了</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%89%E7%BB%8F%E6%80%BB%E7%BB%93"><span class="toc-number">2.</span> <span class="toc-text">凉经总结</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#360%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95"><span class="toc-number">2.1.</span> <span class="toc-text">360推荐算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%A8%E6%83%B3%E7%A7%91%E6%8A%80CV"><span class="toc-number">2.2.</span> <span class="toc-text">推想科技CV</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%AC%E4%B8%9C%E9%9B%B6%E5%94%AEnlp"><span class="toc-number">2.3.</span> <span class="toc-text">京东零售nlp</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%AB%98%E5%BE%B7%E6%95%B0%E6%8D%AE%E7%A0%94%E5%8F%91"><span class="toc-number">2.4.</span> <span class="toc-text">高德数据研发</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BF%AB%E6%89%8B%E6%B5%81%E5%AA%92%E4%BD%93%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90"><span class="toc-number">2.5.</span> <span class="toc-text">快手流媒体数据分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A5%BD%E6%9C%AA%E6%9D%A5%E5%AD%A6%E8%80%8C%E6%80%9D%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%AE%97%E6%B3%95"><span class="toc-number">2.6.</span> <span class="toc-text">好未来学而思机器学习算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8B%9B%E9%93%B6%E7%BD%91%E7%BB%9C%E6%95%B0%E6%8D%AE%E7%A0%94%E5%8F%91"><span class="toc-number">2.7.</span> <span class="toc-text">招银网络数据研发</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Conclusion"><span class="toc-number">3.</span> <span class="toc-text">Conclusion</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -400,8 +710,8 @@
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "https://github.com/wct1998/wct1998.github.io/2021/05/05/leetcode11-medium/", 
-    sourceId: "leetcode11-medium",
+    url: "https://github.com/wct1998/wct1998.github.io/2021/06/02/review-of-interview-in-May/", 
+    sourceId: "review-of-interview-in-May",
     productKey: "true",
     target: "cloud-tie-wrapper"
   };
