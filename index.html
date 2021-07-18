@@ -172,6 +172,146 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-weilaitest718" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/07/18/weilaitest718/">蔚来提前批笔试</a>
+    </h1>
+  
+
+        
+        <a href="/2021/07/18/weilaitest718/" class="archive-article-date">
+  	<time datetime="2021-07-18T13:08:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+      
+      
+        <h3 id="蔚来提前批笔试"><a href="#蔚来提前批笔试" class="headerlink" title="蔚来提前批笔试"></a>蔚来提前批笔试</h3><p>蔚来笔试题8卷-0718，10道单选，5道不定项，2道编程。</p>
+<h3 id="单选"><a href="#单选" class="headerlink" title="单选"></a>单选</h3><ol>
+<li><p>两棵平衡BST合并为一棵，算法的时间复杂度最小可以是多少？ O（m+n） O(mlogn)不确定，有没有大佬讲解下？</p>
+</li>
+<li><p>动态规划算法的基本要素？ 最优子结构和重叠子问题</p>
+</li>
+<li><p>数组A[n]，对于每个元素，排序前与排序后的下标相差的最大值为k,可以利用这种特性改写的排序算法及其时间复杂度是？不明觉厉，有没有大佬能讲解一下？</p>
+</li>
+<li><p>给定（19，8，31，21，17，10，11，24），哈希函数 h(k) = k mod 7, 求链地址法解决哈希冲突的最小查找次数。（回头自己查几个概念和考研例题，散列表、线性探测法，链地址法等解决哈希冲突的方法）</p>
+</li>
+<li><p>http通过（SSL）保证信息安全。</p>
+</li>
+<li><p>word2vec是非监督学习。</p>
+</li>
+<li><p>长度为n的数组的逆序对数量的数学期望是：n(n-1)/4。 有没有大佬能讲解一下？</p>
+</li>
+<li><p>已经获得除CPU以外所有所需资源的进程处于<em>就绪</em>状态。</p>
+</li>
+<li><p>ABCD=E,则B的逆是？简单算一下知道是CDA</p>
+</li>
+<li><p>入栈顺序ABCDE，哪个出栈顺序不可能？</p>
+</li>
+</ol>
+<h3 id="多选"><a href="#多选" class="headerlink" title="多选"></a>多选</h3><ol>
+<li><p>Linux可以查看内存使用量的命令有:df,top,free</p>
+</li>
+<li><p>哪些是判别式模型（svm,crf条件随机场,memm最大熵模型）hmm（隐马尔可夫链）是生成式模型。关于判别式和生成式，看《百面机器学习》。这几个分词、序列标注算法必须会。</p>
+</li>
+<li><p>transformer的并行体现在（attention,encoder,input token）,注意没有decoder。nlp岗位必须会transformer，一定要看。<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/157884112">transformer并行化</a></p>
+</li>
+<li><p>进程与线程。关于进程和线程这个去看CSNOTE或者其他八股文。</p>
+</li>
+<li><p>忘了。。。</p>
+</li>
+</ol>
+<h3 id="编程题"><a href="#编程题" class="headerlink" title="编程题"></a>编程题</h3><h4 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h4><p>蔚来有三种型号的车用0 1 2 表示，要求相同车型的车摆在一起。时间复杂度O(n)空间复杂度O(1)。</p>
+<p>这题像放水，其实直接用sort就能过100%。但是内置的sort归并排序需要额外空间。所以我后来又改了一下，第一次遍历统计0 1 2 的个数然后第二次遍历修改数组。100%</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] sortCars (<span class="keyword">int</span>[] nums) &#123;</span><br><span class="line">        <span class="comment">// write code here</span></span><br><span class="line">        <span class="keyword">int</span> index0 = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> index1 = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> index2 = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> num : nums) &#123;</span><br><span class="line">            <span class="keyword">if</span> (num == <span class="number">2</span>) &#123;</span><br><span class="line">                index2++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (num == <span class="number">1</span>) &#123;</span><br><span class="line">                index1++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (num == <span class="number">0</span>) &#123;</span><br><span class="line">                index0++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 一共有index0个ES8,index1个ES6,index2个EC6</span></span><br><span class="line">        index1 += index0;</span><br><span class="line">        index2 += index1;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i =<span class="number">0</span> ;i&lt;index0;i++) &#123;</span><br><span class="line">            nums[i] = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=index0;i&lt;index1;i++) &#123;</span><br><span class="line">            nums[i] = <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=index1;i&lt;index2;i++) &#123;</span><br><span class="line">            nums[i] = <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> nums;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="最大岛屿面积"><a href="#最大岛屿面积" class="headerlink" title="最大岛屿面积"></a>最大岛屿面积</h4><p>是<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/number-of-islands/">leetcode200岛屿的数量</a>的变种，本题要求求出面积最大的岛屿。</p>
+<p>思路不变，暴力。通过100%。用了取巧的办法，把每次的查找路径都存起来，然后求最长的路径就是最大岛屿的面积，虽然AC但是还有很大提升空间。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Pair</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> x;</span><br><span class="line">        <span class="keyword">int</span> y;</span><br><span class="line">        Pair(<span class="keyword">int</span> x, <span class="keyword">int</span> y) &#123;</span><br><span class="line">            <span class="keyword">this</span>.x = x;</span><br><span class="line">            <span class="keyword">this</span>.y = y;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setX</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.x = x;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getX</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> x;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getY</span><span class="params">()</span> </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> y;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setY</span><span class="params">(<span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.y = y;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    List&lt;List&lt;Pair&gt;&gt; island;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxAreaOfIsland</span> <span class="params">(<span class="keyword">int</span>[][] grid)</span> </span>&#123;</span><br><span class="line">        island = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span> max = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> m = grid.length;</span><br><span class="line">        <span class="keyword">int</span> n = grid[<span class="number">0</span>].length;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i =<span class="number">0</span>;i&lt;m;i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j =<span class="number">0</span>;j&lt;n;j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (grid[i][j]==<span class="number">1</span>) &#123;</span><br><span class="line">                    <span class="keyword">int</span> temp = <span class="number">0</span>;</span><br><span class="line">                    infection(i,j,grid,<span class="keyword">new</span> ArrayList&lt;Pair&gt;());</span><br><span class="line">                    res++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;island.size();i++) &#123;</span><br><span class="line">            max = Math.max(max,island.get(i).size());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> max;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">infection</span><span class="params">(<span class="keyword">int</span> i,<span class="keyword">int</span> j, <span class="keyword">int</span>[][] grid, List&lt;Pair&gt; temp)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (i&lt;<span class="number">0</span> || j&lt;<span class="number">0</span> || i&gt;=grid.length||j&gt;=grid[<span class="number">0</span>].length||grid[i][j]!=<span class="number">1</span>) &#123;</span><br><span class="line">            island.add(<span class="keyword">new</span> ArrayList&lt;&gt;(temp));</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        grid[i][j]=-<span class="number">1</span>;</span><br><span class="line">        temp.add(<span class="keyword">new</span> Pair(i,j));</span><br><span class="line">        infection(i,j+<span class="number">1</span>,grid,temp);</span><br><span class="line">        infection(i,j-<span class="number">1</span>,grid,temp);</span><br><span class="line">        infection(i-<span class="number">1</span>,j,grid,temp);</span><br><span class="line">        infection(i+<span class="number">1</span>,j,grid,temp);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔试</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">秋招提前批</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">nlp</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">车企</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/凉经//" class="article-tag-list-link color3">凉经</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/07/18/weilaitest718/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-first-offer" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1074,108 +1214,6 @@
 
 
   
-    <article id="post-coding-interview11" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/05/08/coding-interview11/">剑指Offer11旋转数组的最小数字</a>
-    </h1>
-  
-
-        
-        <a href="/2021/05/08/coding-interview11/" class="archive-article-date">
-  	<time datetime="2021-05-08T03:23:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-      
-      
-        <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><blockquote>
-<p>把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。输入一个递增排序的数组的一个旋转，输出旋转数组的最小元素。例如，数组 [3,4,5,1,2] 为 [1,2,3,4,5] 的一个旋转，该数组的最小值为1。</p>
-</blockquote>
-<h3 id="输入输出描述"><a href="#输入输出描述" class="headerlink" title="输入输出描述"></a>输入输出描述</h3><blockquote>
-<p>输入：[3,4,5,1,2]<br>输出：1<br>输入：[2,2,2,0,1]<br>输出：0</p>
-</blockquote>
-<h3 id="分析：二分查找-顺序查找"><a href="#分析：二分查找-顺序查找" class="headerlink" title="分析：二分查找+顺序查找"></a>分析：二分查找+顺序查找</h3><p>涉及到排序好的数组的查找问题都要立马想到二分查找<br>用左、右两个指针分别位于开始和末尾，如果中间指针指向元素大于左指针指向的元素，那么数组中最小的元素应该位于中间元素的后面，因此更新中间指针为左指针。如果中间指针指向元素小于右指针指向的元素，那么数组中最小的元素应该位于中间元素的前面，因此更新中间指针为左指针。循环此过程，直到右指针-左指针=1，此时右指针指向的元素就是最小元素。</p>
-<hr>
-<p>但是还有一个问题，如果我旋转0个元素，即这个数组不变，用这种方法是求不出最小值的。这个时候判断一下开始元素是否小于末尾元素，小于的话直接输出开始元素。</p>
-<hr>
-<p>还有一种情况，如果左右中三个指针指向的元素都相等怎么办？例如[1,0,1,1,1],[1,1,1,0,1]都可以看成[0,1,1,1,1]的旋转。出现三个指针都指向1，这种情况下，只能进行顺序查找了。</p>
-<h3 id="代码-java"><a href="#代码-java" class="headerlink" title="代码(java)"></a>代码(java)</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minArray</span><span class="params">(<span class="keyword">int</span>[] numbers)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// if (numbers.length==0) return 0;</span></span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> right = numbers.length-<span class="number">1</span>;</span><br><span class="line">        <span class="comment">// 判断不旋转的情况</span></span><br><span class="line">        <span class="keyword">if</span> (numbers[left]&lt;numbers[right]) <span class="keyword">return</span> numbers[left];</span><br><span class="line">        <span class="keyword">while</span> (right-left&gt;<span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> middle = (left+right) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (numbers[left]==numbers[right] &amp;&amp; numbers[left]==numbers[middle])&#123;</span><br><span class="line">                <span class="keyword">return</span> minSearch(numbers,left+<span class="number">1</span>,right-<span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 要加等号，否则死循环</span></span><br><span class="line">            <span class="keyword">if</span> (numbers[middle]&gt;=numbers[<span class="number">0</span>]) &#123; <span class="comment">//最小值在右侧</span></span><br><span class="line">                left = middle; </span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (numbers[middle]&lt;=numbers[right])&#123; <span class="comment">//最小值在左侧</span></span><br><span class="line">                right = middle;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> numbers[right];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">minSearch</span><span class="params">(<span class="keyword">int</span> []numbers, <span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">        <span class="comment">//顺序查找区间内最小值</span></span><br><span class="line">        <span class="keyword">int</span> min = Integer.MAX_VALUE;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=x;i&lt;=y;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (numbers[i]&lt;min)&#123;</span><br><span class="line">                min = numbers[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> min;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">剑指Offer</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">二分查找</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/数据结构与算法//" class="article-tag-list-link color3">数据结构与算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/05/08/coding-interview11/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1317,6 +1355,14 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">二叉树</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">递归</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">字符串</a>
               </li>
              
@@ -1326,14 +1372,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">栈</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">递归</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">二叉树</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1405,15 +1443,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">数学</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">循环</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1458,6 +1496,14 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">排序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">nlp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">车企</a>
               </li>
              
               <li class="article-tag-list-item">
