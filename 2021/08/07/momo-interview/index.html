@@ -6,21 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/wct1998/wct1998.github.io">
-  <title>剑指Offer07重建二叉树 | A cabbage&#39;s Blog</title>
+  <title>陌陌提前批推荐算法凉经 | A cabbage&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="题目描述 输入某二叉树的前序遍历和中序遍历的结果，请重建该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。">
+  <meta name="description" content="裸面，挂就完事了最近根本没有时间准备面试。简历上的内容来不及提炼，以前的凉经也没时间挂。这次挂也是意料之中。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="剑指Offer07重建二叉树">
-<meta property="og:url" content="https://github.com/wct1998/wct1998.github.io/2021/05/05/coding-interview07/index.html">
+<meta property="og:title" content="陌陌提前批推荐算法凉经">
+<meta property="og:url" content="https://github.com/wct1998/wct1998.github.io/2021/08/07/momo-interview/index.html">
 <meta property="og:site_name" content="A cabbage&#39;s Blog">
-<meta property="og:description" content="题目描述 输入某二叉树的前序遍历和中序遍历的结果，请重建该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。">
+<meta property="og:description" content="裸面，挂就完事了最近根本没有时间准备面试。简历上的内容来不及提炼，以前的凉经也没时间挂。这次挂也是意料之中。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-05-05T02:53:27.000Z">
-<meta property="article:modified_time" content="2021-05-05T03:56:13.646Z">
+<meta property="article:published_time" content="2021-08-07T06:34:20.000Z">
+<meta property="article:modified_time" content="2021-08-07T07:47:46.467Z">
 <meta property="article:author" content="CT.W">
-<meta property="article:tag" content="剑指Offer">
-<meta property="article:tag" content="递归">
-<meta property="article:tag" content="二叉树">
+<meta property="article:tag" content="算法">
+<meta property="article:tag" content="秋招提前批">
+<meta property="article:tag" content="推荐">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="A cabbage&#39;s Blog" type="application/atom+xml">
@@ -175,20 +175,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-coding-interview07" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-momo-interview" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      剑指Offer07重建二叉树
+      陌陌提前批推荐算法凉经
     </h1>
   
 
         
-        <a href="/2021/05/05/coding-interview07/" class="archive-article-date">
-  	<time datetime="2021-05-05T02:53:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-05</time>
+        <a href="/2021/08/07/momo-interview/" class="archive-article-date">
+  	<time datetime="2021-08-07T06:34:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-07</time>
 </a>
         
       </header>
@@ -197,16 +197,42 @@
       
       
       
-        <h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><blockquote>
-<p>输入某二叉树的前序遍历和中序遍历的结果，请重建该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。</p>
-</blockquote>
+        <h4 id="裸面，挂就完事了"><a href="#裸面，挂就完事了" class="headerlink" title="裸面，挂就完事了"></a>裸面，挂就完事了</h4><p>最近根本没有时间准备面试。简历上的内容来不及提炼，以前的凉经也没时间挂。这次挂也是意料之中。</p>
 <span id="more"></span>
 
-<h3 id="输入输出描述"><a href="#输入输出描述" class="headerlink" title="输入输出描述"></a>输入输出描述</h3><blockquote>
-<p>前序遍历 preorder = 3,9,20,15,7<br>中序遍历 inorder = 9,3,15,20,7<br>输出：<br>    3<br>   / <br>  9  20<br>    /  <br>   15   7</p>
-</blockquote>
-<h3 id="分析：二叉树前序和中序遍历的性质"><a href="#分析：二叉树前序和中序遍历的性质" class="headerlink" title="分析：二叉树前序和中序遍历的性质"></a>分析：二叉树前序和中序遍历的性质</h3><p>如样例所示，前序遍历序列的第一个数字3就是根节点值。根据中序遍历的特点，根节点3前面的数是左子树节点的值，3后面的数字都是右子树节点的值。由于在中序遍历序列中，有1个数字是左子树节点的值，因此左子树共有1个节点；有3个数字是右子树节点的值，因此右子树有三个节点。同样，在前序遍历序列中，根节点后面的一个数字是左子树节点值，再后面的数字都是右子树节点值。这样就在前序遍历和中序遍历两个序列中分别找到了左、右子树对应的子序列。然后就可以用递归的方法来实现。</p>
-<h3 id="代码（Java）"><a href="#代码（Java）" class="headerlink" title="代码（Java）"></a>代码（Java）</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.lang.reflect.Array;</span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.swing.tree.TreeNode;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * public class TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode left;</span></span><br><span class="line"><span class="comment"> *     TreeNode right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) &#123; val = x; &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> TreeNode <span class="title">buildTree</span><span class="params">(<span class="keyword">int</span>[] preorder, <span class="keyword">int</span>[] inorder)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (preorder.length==<span class="number">0</span>||inorder.length==<span class="number">0</span>) <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">int</span> rootVal = preorder[<span class="number">0</span>],rootIndex = <span class="number">0</span>;<span class="comment">//前序遍历序列首位是根节点</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;preorder.length;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span> (inorder[i]==rootVal)&#123;</span><br><span class="line">                rootIndex=i;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        TreeNode root = <span class="keyword">new</span> TreeNode(rootVal);</span><br><span class="line">        <span class="comment">//找到左子树序列</span></span><br><span class="line">        root.left = buildTree(Arrays.copyOfRange(preorder, <span class="number">1</span>, <span class="number">1</span>+rootIndex), Arrays.copyOfRange(inorder, <span class="number">0</span>, rootIndex));</span><br><span class="line">        <span class="comment">//找到右子树序列</span></span><br><span class="line">        root.right = buildTree(Arrays.copyOfRange(preorder, <span class="number">1</span>+rootIndex, preorder.length), Arrays.copyOfRange(inorder, rootIndex+<span class="number">1</span>,inorder.length));</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
+<li><p>看我研究方向有机器学习，问我是自学还是上课，让我挑了个最熟悉的算法说说，我作死选了个svm</p>
+</li>
+<li><p>什么是支持向量？<br>我的回答：距离最优超平面距离最近的两个样本点。<br>正确答案：对线性可分的情形，构造硬间隔，位于间隔边界上的样本点称为支持向量（硬间隔的支持向量）。对线性不可分的情形，构造软间隔，位于间隔边界上及间隔边界之内的样本点的实例称为支持向量。</p>
+</li>
+<li><p>超平面有几个？<br>说的是1，在面试官提示下终于想起来了，超平面是两条线（两个），表示分类间隔。（这里答错很减分）</p>
+</li>
+<li><p>核函数的作用<br>我的回答：把样本点映射到一个空间中</p>
+</li>
+<li><p>为什么要用核函数？<br>将非线性转化为线性（没答上来，很伤）</p>
+</li>
+<li><p>看我svm答不上，让我说一个其他的比较熟悉的模型。我说的word2vec</p>
+</li>
+<li><p>word2vec的原理<br>简单说了下，分三层。输入层、隐含层，CBOW，skip-gram</p>
+</li>
+<li><p>embedding是怎样产生的？<br>这是个之前面试就问过的问题，但我还是没答上来，我还是结合目标函数说的。但其实这word2vec是以神经语言模型为基础的，换言之是神经网络，我没有答道。面试官给我解释了一通。</p>
+</li>
+<li><p>word2vec有什么技术特点<br>我提到了有两种提升训练速度的方法（分层softmax和负采样），不能解决一词多义问题。</p>
+</li>
+<li><p>fasttext<br>我只答道与word2vec类似，只不过后面有个打标签分类的过程。然后问我是不是监督的，我说他和word2vec都是非监督的。但是这也不准确，这两个模型都有监督的部分和非监督的部分，全面回答才是正确答案。</p>
+</li>
+<li><p>朴素贝叶斯<br>面试官问我贝叶斯可以用来干嘛。我提到了贝叶斯学派分类（结合实习说说）、因果推断等。面试官点头了，看起来这里还行。</p>
+</li>
+<li><p>对推荐系统架构有什么理解：（包括deepfm wide&amp;deep等）<br>我提了wide&amp;deep，结合研究论文说了下，召回和排序，但应该答得不对。面试官没有往下问了。</p>
+</li>
+<li><p>论文几个一作，几个学生一作<br>2个（确真）</p>
+</li>
+<li><p>代码题：最近公共祖先<br>我先问了下面试官，搜索得到两条链表，再求交点这个思路行不行，面试官说可以。<br>我写完马上叫停我，说我是不是平时不刷题，要用递归的更快。（我寻思我问了你这个思路行不行啊，你觉得不行可以让我再想想，那我就用递归的方法了。）我本来打算写一个更难写的方法挽救一下，结果弄巧成拙了。</p>
+</li>
+<li><p>反问<br>问了他陌陌的推荐场景。如何进行时序建模（这个问题困扰我很久了，面试官给了一个检索词，但我没听清）</p>
+</li>
+</ol>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>简历上的内容一定要深挖，把涉及到的技术全部过一遍，仔细理解细节，最好能推导公式。多刷面经。<br>想要通过面试的话，一定不能裸面，裸面就等着挂吧。</p>
 
       
 
@@ -246,15 +272,15 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">剑指Offer</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">递归</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">秋招提前批</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">二叉树</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">推荐</a>
         		</li>
       		
 		</ul>
@@ -266,7 +292,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/数据结构与算法//" class="article-tag-list-link color3">数据结构与算法</a>
+        			<a href="/categories/凉经//" class="article-tag-list-link color3">凉经</a>
         		</li>
       		
 		</ul>
@@ -321,7 +347,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://github.com/wct1998/wct1998.github.io/2021/05/05/coding-interview07/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://github.com/wct1998/wct1998.github.io/2021/08/07/momo-interview/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -335,18 +361,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/05/06/coding-interview08/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          剑指Offer08二叉树的下一个节点
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/05/05/leetcode11-medium/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">leetcode11盛最多水的容器</div>
+    <a href="/2021/07/18/weilaitest718/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">蔚来提前批笔试</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -373,7 +390,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-number">1.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%8F%8F%E8%BF%B0"><span class="toc-number">2.</span> <span class="toc-text">输入输出描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E6%9E%90%EF%BC%9A%E4%BA%8C%E5%8F%89%E6%A0%91%E5%89%8D%E5%BA%8F%E5%92%8C%E4%B8%AD%E5%BA%8F%E9%81%8D%E5%8E%86%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-number">3.</span> <span class="toc-text">分析：二叉树前序和中序遍历的性质</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%EF%BC%88Java%EF%BC%89"><span class="toc-number">4.</span> <span class="toc-text">代码（Java）</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A3%B8%E9%9D%A2%EF%BC%8C%E6%8C%82%E5%B0%B1%E5%AE%8C%E4%BA%8B%E4%BA%86"><span class="toc-number">1.</span> <span class="toc-text">裸面，挂就完事了</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">2.</span> <span class="toc-text">总结</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -390,8 +407,8 @@
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "https://github.com/wct1998/wct1998.github.io/2021/05/05/coding-interview07/", 
-    sourceId: "coding-interview07",
+    url: "https://github.com/wct1998/wct1998.github.io/2021/08/07/momo-interview/", 
+    sourceId: "momo-interview",
     productKey: "true",
     target: "cloud-tie-wrapper"
   };
