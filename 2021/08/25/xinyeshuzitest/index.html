@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/wct1998/wct1998.github.io">
-  <title>剑指Offer10青蛙跳台阶问题 | A cabbage&#39;s Blog</title>
+  <title>兴业数金大数据开发笔试 | A cabbage&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="贴图库属实8彳亍图都删没了，有空去找一下新图床，处理一下消失的图片。">
+  <meta name="description" content="我发现每次做完笔试不写总结不行了不总结的话每次做完笔试选择题都没有提高 数据开发考察的内容很全，可能包括操作系统、计算机网络、数据结构、数据库、Java、Python、Linux、Shell、机器学习、概率论与数理统计、大数据。 大数据 分布式事务故障不同于集中式事务的是通信故障  集群的最主要瓶颈是磁盘 当我们面临集群作战的时候，我们所希望的是即读即得。可是面对大数据，读取数据需要经过IO，这里">
 <meta property="og:type" content="article">
-<meta property="og:title" content="剑指Offer10青蛙跳台阶问题">
-<meta property="og:url" content="https://github.com/wct1998/wct1998.github.io/2021/05/08/coding-interview10/index.html">
+<meta property="og:title" content="兴业数金大数据开发笔试">
+<meta property="og:url" content="https://github.com/wct1998/wct1998.github.io/2021/08/25/xinyeshuzitest/index.html">
 <meta property="og:site_name" content="A cabbage&#39;s Blog">
-<meta property="og:description" content="贴图库属实8彳亍图都删没了，有空去找一下新图床，处理一下消失的图片。">
+<meta property="og:description" content="我发现每次做完笔试不写总结不行了不总结的话每次做完笔试选择题都没有提高 数据开发考察的内容很全，可能包括操作系统、计算机网络、数据结构、数据库、Java、Python、Linux、Shell、机器学习、概率论与数理统计、大数据。 大数据 分布式事务故障不同于集中式事务的是通信故障  集群的最主要瓶颈是磁盘 当我们面临集群作战的时候，我们所希望的是即读即得。可是面对大数据，读取数据需要经过IO，这里">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-05-08T02:16:42.000Z">
-<meta property="article:modified_time" content="2021-05-08T03:03:36.818Z">
+<meta property="article:published_time" content="2021-08-25T14:28:49.000Z">
+<meta property="article:modified_time" content="2021-08-25T15:42:50.633Z">
 <meta property="article:author" content="CT.W">
-<meta property="article:tag" content="剑指Offer">
-<meta property="article:tag" content="动态规划">
+<meta property="article:tag" content="数据开发">
+<meta property="article:tag" content="秋招">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="A cabbage&#39;s Blog" type="application/atom+xml">
@@ -174,20 +174,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-coding-interview10" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-xinyeshuzitest" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      剑指Offer10青蛙跳台阶问题
+      兴业数金大数据开发笔试
     </h1>
   
 
         
-        <a href="/2021/05/08/coding-interview10/" class="archive-article-date">
-  	<time datetime="2021-05-08T02:16:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-08</time>
+        <a href="/2021/08/25/xinyeshuzitest/" class="archive-article-date">
+  	<time datetime="2021-08-25T14:28:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-25</time>
 </a>
         
       </header>
@@ -196,19 +196,93 @@
       
       
       
-        <h3 id="贴图库属实8彳亍"><a href="#贴图库属实8彳亍" class="headerlink" title="贴图库属实8彳亍"></a>贴图库属实8彳亍</h3><p>图都删没了，有空去找一下新图床，处理一下消失的图片。</p>
-<span id="more"></span>
-<h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>一只青蛙一次可以跳上1级台阶，也可以跳上2级台阶。求该青蛙跳上一个 n 级的台阶总共有多少种跳法。</p>
-<p>答案需要取模 1e9+7（1000000007），如计算初始结果为：1000000008，请返回 1。</p>
-<h3 id="分析：斐波那契数列"><a href="#分析：斐波那契数列" class="headerlink" title="分析：斐波那契数列"></a>分析：斐波那契数列</h3><p>这就是一个斐波那契问题，但是要注意不能使用递归，会超时。动态规划方法：<br>边界条件：f(0) = 1, f(1) = 1；状态转移方程就是斐波那契数列。</p>
-<h3 id="代码（迭代）"><a href="#代码（迭代）" class="headerlink" title="代码（迭代）"></a>代码（迭代）</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">numWays</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (n==<span class="number">0</span>||n==<span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> a = <span class="number">1</span>,b = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">            a = a+b;</span><br><span class="line">            b = a-b;</span><br><span class="line">            a %= <span class="number">1000000007</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h3><p>如果把条件改成：一只青蛙一次可以跳上1级台阶，也可以跳上2级……也可以跳上n级，此时该青蛙跳上一个n级台阶共有f(n) = 2^n-1种跳法<br>这类问题比较简单，观察出是斐波那契数列就能做出来，但是有些问题并不是那么容易能看出是斐波那契问题。比如铺瓷砖问题</p>
-<blockquote>
-<p>可以用2*1的小矩形横着或竖着覆盖更大的矩形，请问用8个2×1的小矩形无重叠地覆盖一个2×8的大矩形，总共有多少种方法？</p>
-</blockquote>
+        <h4 id="我发现每次做完笔试不写总结不行了"><a href="#我发现每次做完笔试不写总结不行了" class="headerlink" title="我发现每次做完笔试不写总结不行了"></a>我发现每次做完笔试不写总结不行了</h4><p>不总结的话每次做完笔试选择题都没有提高</p>
+<p>数据开发考察的内容很全，可能包括操作系统、计算机网络、数据结构、数据库、Java、Python、Linux、Shell、机器学习、概率论与数理统计、大数据。</p>
+<h4 id="大数据"><a href="#大数据" class="headerlink" title="大数据"></a>大数据</h4><ul>
+<li><p>分布式事务故障不同于集中式事务的是<strong>通信故障</strong></p>
+</li>
+<li><p>集群的最主要瓶颈是<strong>磁盘</strong></p>
+<p>当我们面临集群作战的时候，我们所希望的是即读即得。可是面对大数据，读取数据需要经过IO，这里可以把IO理解为水的管道。管道越大越强，我们对于T级的数据读取就越快。所以IO的好坏，直接影响了集群对于数据的处理。</p>
+</li>
+<li><p>一个分布式系统最多只能同时满足一致性（Consistency）、可用性（Availability）和分区容错性（Partition tolerance）这三项中的两项。<a target="_blank" rel="noopener" href="https://blog.csdn.net/w372426096/article/details/80437198">CAP理论</a></p>
+</li>
+<li><p>Map Reduce 适用于<strong>可以并行处理的应用程序</strong></p>
+</li>
+</ul>
+<h4 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h4><ul>
+<li><p>GRANT的用法</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_32388977/article/details/79796846">MySQL授权语法</a></p>
+</li>
+<li><p>数据库最小粒度的逻辑存储层次是<strong>数据块</strong></p>
+</li>
+<li><p>数据库在计算机内部的存储方式是<strong>文件</strong></p>
+</li>
+<li><p>哪些情况下适合/不适合创建索引</p>
 <ul>
-<li>分析<br>把2×8的方法记为f(8)，用第一个2×1的小矩形去覆盖大矩形最左边时有两种选择：横着放或竖着放。竖放的时候，右边还剩下2×7的区域，这种情况下覆盖方法为f(7)。横放的时候，左下角必须和横着放一个2×1的小矩形，而在右边还剩下2×6的区域，这种情况下覆盖方法为f(6)。因此f(8)=f(7)+f(6)。</li>
+<li>适合：</li>
+</ul>
+<ol>
+<li>频繁作为where条件语句查询的字段</li>
+<li>关联字段需要建立索引，例如外键字段，student表中的classid,  classes表中的schoolid 等</li>
+<li>排序字段可以建立索引</li>
+<li>分组字段可以建立索引，因为分组的前提是排序</li>
+<li>统计字段可以建立索引，例如count(),max()</li>
+</ol>
+<ul>
+<li><p>不适合：</p>
+<p>　1. 频繁更新的字段不适合建立索引</p>
+<p>　2. where条件中用不到的字段不适合建立索引</p>
+<p>　3. 表数据可以确定比较少的不需要建索引</p>
+<p>　4. 数据重复且发布比较均匀的的字段不适合建索引（唯一性太差的字段不适合建立索引），例如性别，真假值</p>
+<p>　5.  参与列计算的列不适合建索引</p>
+</li>
+</ul>
+</li>
+<li><p>MySQL 通配符：<a target="_blank" rel="noopener" href="https://www.runoob.com/sql/sql-wildcards.html">SQL通配符</a></p>
+<p>  % 用来表示任意多个字符，包含0个字符</p>
+<p>   _ : 用来表示任意单个字符</p>
+<p>   escape：用来转义特定字符</p>
+</li>
+<li><p>MySQL unique约束可以是null：<strong>主键和唯一键约束是通过参考索引实施的，如果插入的值均为NULL，则根据索引的原理，全NULL值不被记录在索引上，所以插入全NULL值时，可以有重复的，而其他的则不能插入重复值</strong></p>
+</li>
+</ul>
+<h4 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h4><ul>
+<li><p>哈夫曼树的带权路径长度</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_39731083/article/details/81632205">计算方法</a></p>
+</li>
+<li><p>二叉树的高度与深度</p>
+<p>某节点的<strong>深度</strong>是指<strong>从根节点到该节点</strong>的最长简单路径边的条数，而<strong>高度</strong>是指从<strong>该节点到叶子节点</strong>的最长简单路径边的条数。</p>
+</li>
+<li><p>二叉树的先序、中序和后序遍历中的叶子序列完全相同，都是从左到右的</p>
+</li>
+<li><p>取最小的关键码，关键码比较和移动次数最少的排序算法是直接选择排序</p>
+<p>直接选择排序第1遍扫描就可以把最大的关键码找出来(不必等到排序结束)，而其他几种排序<a target="_blank" rel="noopener" href="http://www.76616.com/tag/%E6%96%B9%E6%B3%95/">方法</a>都必须等到排序完成才能找到最大关键码。</p>
+</li>
+</ul>
+<h4 id="Shell-Linux"><a href="#Shell-Linux" class="headerlink" title="Shell/Linux"></a>Shell/Linux</h4><ul>
+<li><p>sed ‘1p’ run.sh  显示第一行 <a target="_blank" rel="noopener" href="https://blog.csdn.net/zhushuai1221/article/details/53114178">Linux sed 命令用法</a></p>
+</li>
+<li><p>shell chmod 664</p>
+<p>数字与字母的组合是chmod命令赋予文件，目录访问权限的方式</p>
+<p>访问权限：可读，可写，可执行</p>
+<p>字母表示：r   ， w  ， x</p>
+<p>数字表示：4   ， 2   ， 1    ，0（无权限）</p>
+<p>授权对象：u   ， g   ， o     ，a(所有对象)</p>
+<p>对应数字：chmod 664 xxx.sh，每一位数字表示对应u,g,o 对应的权限数字的相加rwx=4+2+0，4+2+0，4+0+0</p>
+<p>值得注意：的是在使用数字授权时，需要把原有的权限对应数字相加后在与现在的权限对应数字相加，否则授权后文件将失去原有的权限</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/lklong123/article/details/84697334?utm_medium=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-1.essearch_pc_relevant&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2~default~BlogCommendFromMachineLearnPai2~default-1.essearch_pc_relevant">shell chmod中数字与字母的含义</a></p>
+</li>
+</ul>
+<h4 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h4><ul>
+<li><p>_ all _的用法 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#bb.py</span></span><br><span class="line">__all__=(<span class="string">&#x27;A&#x27;</span>,<span class="string">&#x27;func&#x27;</span>)</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span>():</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self,name,age</span>):</span></span><br><span class="line">        self.name=name</span><br><span class="line">        self.age=age</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span>():</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self,name,<span class="built_in">id</span></span>):</span></span><br><span class="line">        self.name=name</span><br><span class="line">        self.<span class="built_in">id</span>=<span class="built_in">id</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span>():</span></span><br><span class="line">    <span class="built_in">print</span> <span class="string">&quot;func() is run!&quot;</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func1</span>():</span></span><br><span class="line">    <span class="built_in">print</span> <span class="string">&quot;func1() is run!&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#test_bb.py</span></span><br><span class="line"><span class="keyword">from</span> bb <span class="keyword">import</span> *</span><br><span class="line">a=A(<span class="string">&#x27;zhansan&#x27;</span>,<span class="string">&#x27;18&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span> a.name,a.age</span><br><span class="line">func()</span><br><span class="line"><span class="comment"># 运行结果：</span></span><br><span class="line"><span class="comment"># zhansan 18</span></span><br><span class="line"><span class="comment"># func() is run!</span></span><br><span class="line"><span class="comment"># 由于bb.py中使用了__all__=(&#x27;A&#x27;,&#x27;func&#x27;)，所以在别的模块导入该模块时，只能导入__all__中的变量、方法、类</span></span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/wxlog/p/10566628.html">python _ all _的用法</a></p>
+</li>
 </ul>
 
       
@@ -249,11 +323,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">剑指Offer</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据开发</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">动态规划</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">秋招</a>
         		</li>
       		
 		</ul>
@@ -265,7 +339,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/数据结构与算法//" class="article-tag-list-link color3">数据结构与算法</a>
+        			<a href="/categories/凉经//" class="article-tag-list-link color3">凉经</a>
         		</li>
       		
 		</ul>
@@ -320,7 +394,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://github.com/wct1998/wct1998.github.io/2021/05/08/coding-interview10/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://github.com/wct1998/wct1998.github.io/2021/08/25/xinyeshuzitest/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -334,18 +408,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/05/08/coding-interview11/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          剑指Offer11旋转数组的最小数字
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/05/06/coding-interview09/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">剑指Offer09用两个栈实现队列</div>
+    <a href="/2021/08/22/kmp/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">kmp算法</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -372,7 +437,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B4%B4%E5%9B%BE%E5%BA%93%E5%B1%9E%E5%AE%9E8%E5%BD%B3%E4%BA%8D"><span class="toc-number">1.</span> <span class="toc-text">贴图库属实8彳亍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-number">2.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E6%9E%90%EF%BC%9A%E6%96%90%E6%B3%A2%E9%82%A3%E5%A5%91%E6%95%B0%E5%88%97"><span class="toc-number">3.</span> <span class="toc-text">分析：斐波那契数列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%EF%BC%88%E8%BF%AD%E4%BB%A3%EF%BC%89"><span class="toc-number">4.</span> <span class="toc-text">代码（迭代）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%80%83"><span class="toc-number">5.</span> <span class="toc-text">思考</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%88%91%E5%8F%91%E7%8E%B0%E6%AF%8F%E6%AC%A1%E5%81%9A%E5%AE%8C%E7%AC%94%E8%AF%95%E4%B8%8D%E5%86%99%E6%80%BB%E7%BB%93%E4%B8%8D%E8%A1%8C%E4%BA%86"><span class="toc-number">1.</span> <span class="toc-text">我发现每次做完笔试不写总结不行了</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%A7%E6%95%B0%E6%8D%AE"><span class="toc-number">2.</span> <span class="toc-text">大数据</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">3.</span> <span class="toc-text">数据库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="toc-number">4.</span> <span class="toc-text">数据结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Shell-Linux"><span class="toc-number">5.</span> <span class="toc-text">Shell&#x2F;Linux</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Python"><span class="toc-number">6.</span> <span class="toc-text">Python</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -389,8 +454,8 @@
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "https://github.com/wct1998/wct1998.github.io/2021/05/08/coding-interview10/", 
-    sourceId: "coding-interview10",
+    url: "https://github.com/wct1998/wct1998.github.io/2021/08/25/xinyeshuzitest/", 
+    sourceId: "xinyeshuzitest",
     productKey: "true",
     target: "cloud-tie-wrapper"
   };
