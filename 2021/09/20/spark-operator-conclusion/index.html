@@ -6,20 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/wct1998/wct1998.github.io">
-  <title>leetcode2两数相加，中等 | A cabbage&#39;s Blog</title>
+  <title>Spark算子总结 | A cabbage&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="祝全世界无产阶级节日快乐">
+  <meta name="description" content="总结一下Spark算子的使用，主要是实习期间用到的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="leetcode2两数相加，中等">
-<meta property="og:url" content="https://github.com/wct1998/wct1998.github.io/2021/05/01/leetcode2/index.html">
+<meta property="og:title" content="Spark算子总结">
+<meta property="og:url" content="https://github.com/wct1998/wct1998.github.io/2021/09/20/spark-operator-conclusion/index.html">
 <meta property="og:site_name" content="A cabbage&#39;s Blog">
-<meta property="og:description" content="祝全世界无产阶级节日快乐">
+<meta property="og:description" content="总结一下Spark算子的使用，主要是实习期间用到的">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-05-01T02:58:34.000Z">
-<meta property="article:modified_time" content="2021-05-01T03:26:00.007Z">
+<meta property="article:published_time" content="2021-09-20T03:02:03.000Z">
+<meta property="article:modified_time" content="2021-09-20T07:41:00.436Z">
 <meta property="article:author" content="CT.W">
-<meta property="article:tag" content="链表">
-<meta property="article:tag" content="数学">
+<meta property="article:tag" content="Spark">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="A cabbage&#39;s Blog" type="application/atom+xml">
@@ -174,20 +173,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-leetcode2" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-spark-operator-conclusion" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      leetcode2两数相加，中等
+      Spark算子总结
     </h1>
   
 
         
-        <a href="/2021/05/01/leetcode2/" class="archive-article-date">
-  	<time datetime="2021-05-01T02:58:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-05-01</time>
+        <a href="/2021/09/20/spark-operator-conclusion/" class="archive-article-date">
+  	<time datetime="2021-09-20T03:02:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-09-20</time>
 </a>
         
       </header>
@@ -196,28 +195,102 @@
       
       
       
-        <h3 id="祝全世界无产阶级节日快乐"><a href="#祝全世界无产阶级节日快乐" class="headerlink" title="祝全世界无产阶级节日快乐"></a>祝全世界无产阶级节日快乐</h3><span id="more"></span>
+        <h3 id="总结一下Spark算子的使用，主要是实习期间用到的"><a href="#总结一下Spark算子的使用，主要是实习期间用到的" class="headerlink" title="总结一下Spark算子的使用，主要是实习期间用到的"></a>总结一下Spark算子的使用，主要是实习期间用到的</h3><span id="more"></span>
 
-<h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>给你两个 非空 的链表，表示两个非负的整数。它们每位数字都是按照 逆序 的方式存储的，并且每个节点只能存储 一位 数字。</p>
-<p>请你将两个数相加，并以相同形式返回一个表示和的链表。</p>
-<p>你可以假设除了数字 0 之外，这两个数都不会以 0 开头。</p>
-<h3 id="输入输出描述"><a href="#输入输出描述" class="headerlink" title="输入输出描述"></a>输入输出描述</h3><blockquote>
-<p>输入：l1 = [2,4,3], l2 = [5,6,4]<br>输出：[7,0,8]<br>解释：342 + 465 = 807.<br>输入：l1 = [0], l2 = [0]<br>输出：[0]<br>输入：l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]<br>输出：[8,9,9,9,0,0,0,1]</p>
-</blockquote>
-<h3 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h3><p>把题目描述翻译成人话，就是分别把两个数的每一位数都取出来，分别放到两个两个链表里，越低位越靠前。好了，有一个很容易想的思路，就是把链表里的两个数分别还原相加，然后再把结果的每一位数取出来放到链表。很好写，但提交之后被超过2147483647(Integer.MAX_VALUE)的数教做人了。因此，这题就是得模拟加法器，或者说是模拟列竖式做加法。和高精度加法类似。</p>
-<h3 id="代码：模拟列竖式加法计算"><a href="#代码：模拟列竖式加法计算" class="headerlink" title="代码：模拟列竖式加法计算"></a>代码：模拟列竖式加法计算</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">addTwoNumbers</span><span class="params">(ListNode l1, ListNode l2)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 进位变量</span></span><br><span class="line">        <span class="keyword">int</span> t = <span class="number">0</span>;</span><br><span class="line">        ListNode dummy = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">        ListNode pre = dummy;</span><br><span class="line">        <span class="keyword">int</span> value = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(l1!=<span class="keyword">null</span>&amp;&amp;l2!=<span class="keyword">null</span>)&#123;</span><br><span class="line">            value = (l1.val+l2.val+t) % <span class="number">10</span>;</span><br><span class="line">            t = (l1.val+l2.val+t)/<span class="number">10</span>;</span><br><span class="line">            ListNode l = <span class="keyword">new</span> ListNode(value);</span><br><span class="line">            l.next = pre.next;</span><br><span class="line">            pre.next = l;</span><br><span class="line">            pre=l;</span><br><span class="line">            l1=l1.next;</span><br><span class="line">            l2=l2.next;            </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 判断哪个链表先结束</span></span><br><span class="line">        <span class="keyword">if</span> (l1==<span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">while</span>(l2!=<span class="keyword">null</span>)&#123;</span><br><span class="line">                value = (l2.val + t) % <span class="number">10</span> ;</span><br><span class="line">                t = (l2.val+t)/<span class="number">10</span>;</span><br><span class="line">                ListNode l = <span class="keyword">new</span> ListNode(value);</span><br><span class="line">                l.next = pre.next;</span><br><span class="line">                pre.next = l;</span><br><span class="line">                pre = l;</span><br><span class="line">                l2 = l2.next;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (l2==<span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">while</span>(l1!=<span class="keyword">null</span>)&#123;</span><br><span class="line">                value = (l1.val + t) % <span class="number">10</span> ;</span><br><span class="line">                t = (l1.val+t)/<span class="number">10</span>;</span><br><span class="line">                ListNode l = <span class="keyword">new</span> ListNode(value);</span><br><span class="line">                l.next = pre.next;</span><br><span class="line">                pre.next = l;</span><br><span class="line">                pre = l;</span><br><span class="line">                l1 = l1.next;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 别忘了处理最高位的进位</span></span><br><span class="line">        <span class="keyword">if</span> (t != <span class="number">0</span> )&#123;</span><br><span class="line">            ListNode l = <span class="keyword">new</span> ListNode(t);</span><br><span class="line">            l.next = pre.next;</span><br><span class="line">            pre.next = l;</span><br><span class="line">            pre = l;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dummy.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>[TOC]</p>
+<h3 id="一-、Spark-RDD"><a href="#一-、Spark-RDD" class="headerlink" title="一 、Spark RDD"></a>一 、Spark RDD</h3><ol>
+<li><p>概念</p>
+<p>弹性分布式数据集，可以自动进行内存和磁盘的切换，基于lineage（继承关系）高效容错任务失败重试。来源：1）内存集合和外部存储系统；2）其他RDD转换</p>
+</li>
+<li><p>特征</p>
+<p>1）有分片列表</p>
+<p>2）由一个函数计算每一个分片</p>
+<p>3）宽依赖（超生,类似于MapReduce的shuffle操作）和窄依赖（独生子女）</p>
+</li>
+</ol>
+<h3 id="二、-Spark-RDD-算子"><a href="#二、-Spark-RDD-算子" class="headerlink" title="二、 Spark RDD 算子"></a>二、 Spark RDD 算子</h3><p>参考 <a target="_blank" rel="noopener" href="https://blog.csdn.net/u012893747/article/details/77074757">Spark RDD操作讲解</a></p>
+<h4 id="Transformations算子，并不触发提交作业"><a href="#Transformations算子，并不触发提交作业" class="headerlink" title="Transformations算子，并不触发提交作业"></a>Transformations算子，并不触发提交作业</h4><h5 id="value型，针对处理的数据项是Value类型的数据"><a href="#value型，针对处理的数据项是Value类型的数据" class="headerlink" title="value型，针对处理的数据项是Value类型的数据"></a>value型，针对处理的数据项是Value类型的数据</h5><p>map(f:T=&gt;U)  : RDD[T] =&gt; RDD[U]</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// map是对RDD中的每个元素都执行一个指定的函数来产生一个新的RDD；RDD之间的元素是一对一关系；</span></span><br><span class="line">    <span class="keyword">val</span> rdd1 = sc.parallelize(<span class="number">1</span> to <span class="number">9</span>, <span class="number">3</span>)</span><br><span class="line">    <span class="keyword">val</span> rdd2 = rdd1.map(x =&gt; x*<span class="number">2</span>)</span><br><span class="line">    rdd2.collect</span><br><span class="line">    res3: <span class="type">Array</span>[<span class="type">Int</span>] = <span class="type">Array</span>(<span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">10</span>, <span class="number">12</span>, <span class="number">14</span>, <span class="number">16</span>, <span class="number">18</span>)</span><br></pre></td></tr></table></figure>
 
-<h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><p>一不小心又打了个100%</p>
-<blockquote>
-<p>执行用时：2 ms, 在所有 Java 提交中击败了100.00%的用户<br>内存消耗：38.6 MB, 在所有 Java 提交中击败了88.42%的用户。</p>
-</blockquote>
+<p>filter( f: T=&gt;Bool) : RDD[T] =&gt; RDD[T]</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Filter是对RDD元素进行过滤；返回一个新的数据集，是经过func函数后返回值为true的原元素组成；</span></span><br><span class="line">    <span class="keyword">val</span> rdd3 = rdd2. filter (x =&gt; x&gt; <span class="number">10</span>)</span><br><span class="line">    rdd3.collect</span><br><span class="line">    res4: <span class="type">Array</span>[<span class="type">Int</span>] = <span class="type">Array</span>(<span class="number">12</span>, <span class="number">14</span>, <span class="number">16</span>, <span class="number">18</span>)</span><br></pre></td></tr></table></figure>
+
+<p>map\flatMap 算子是<strong>输入分区与输出分区一对一型</strong></p>
 <hr>
-<p>空间复杂度比较高，看看评论区。</p>
-<h3 id="评论区大佬（si-ren）的代码"><a href="#评论区大佬（si-ren）的代码" class="headerlink" title="评论区大佬（si ren）的代码"></a>评论区大佬（si ren）的代码</h3><p>mata川的答案（晦气）：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">addTwoNumbers</span><span class="params">(ListNode l1, ListNode l2)</span> </span>&#123;</span><br><span class="line">        ListNode dummyHead = <span class="keyword">new</span> ListNode(-<span class="number">1</span>), pre = dummyHead;</span><br><span class="line">        <span class="keyword">int</span> t = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (l1 != <span class="keyword">null</span> || l2 != <span class="keyword">null</span> || t != <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (l1 != <span class="keyword">null</span>) &#123;</span><br><span class="line">                t += l1.val;</span><br><span class="line">                l1 = l1.next;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (l2 != <span class="keyword">null</span>) &#123;</span><br><span class="line">                t += l2.val;</span><br><span class="line">                l2 = l2.next;</span><br><span class="line">            &#125;</span><br><span class="line">            pre.next = <span class="keyword">new</span> ListNode(t % <span class="number">10</span>);</span><br><span class="line">            pre = pre.next;</span><br><span class="line">            t /= <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> dummyHead.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>sample(fraction : Float) : RDD[T] =&gt; RDD[T]  deterministic sampling</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//sample(withReplacement,fraction,seed)是根据给定的随机种子seed，随机抽样出数量为frac的数据。withReplacement：是否放回样；fraction：比例，0.1表示10% ；</span></span><br><span class="line">    <span class="keyword">val</span> a = sc.parallelize(<span class="number">1</span> to <span class="number">10000</span>, <span class="number">3</span>)</span><br><span class="line">    a.sample(<span class="literal">false</span>, <span class="number">0.1</span>, <span class="number">0</span>).count</span><br><span class="line">    res24: <span class="type">Long</span> = <span class="number">960</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p>整合到一个while循环，简化了加法器，仅用一个t为额外变量，代码看起来更清爽（爪巴）。</p>
-<h3 id="祝全世界无产阶级劳动节快乐"><a href="#祝全世界无产阶级劳动节快乐" class="headerlink" title="祝全世界无产阶级劳动节快乐"></a>祝全世界无产阶级劳动节快乐</h3>
+<p>distinct 去重操作</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//distinct([numTasks]))是数据去重，返回一个数据集，是对两个数据集去除重复数据，numTasks参数是设置任务并行数量。</span></span><br><span class="line">    <span class="keyword">val</span> rdd10 = rdd8.union(rdd9).distinct</span><br><span class="line">    rdd10.collect</span><br><span class="line">    res19: <span class="type">Array</span>[<span class="type">Int</span>] = <span class="type">Array</span>(<span class="number">12</span>, <span class="number">1</span>, <span class="number">14</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">16</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">18</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>)</span><br></pre></td></tr></table></figure>
+
+<p>filter( f: T=&gt;Bool) : RDD[T] =&gt; RDD[T]</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//flatMap类似于map，但是每一个输入元素，会被映射为0到多个输出元素（因此，func函数的返回值是一个Seq，而不是单一元素），RDD之间的元素是一对多关系；</span></span><br><span class="line">    <span class="keyword">val</span> rdd4 = rdd3. flatMap (x =&gt; x to <span class="number">20</span>)</span><br><span class="line">    res5: <span class="type">Array</span>[<span class="type">Int</span>] = <span class="type">Array</span>(<span class="number">12</span>, <span class="number">13</span>, <span class="number">14</span>, <span class="number">15</span>, <span class="number">16</span>, <span class="number">17</span>, <span class="number">18</span>, <span class="number">19</span>, <span class="number">20</span>, <span class="number">14</span>, <span class="number">15</span>, <span class="number">16</span>, <span class="number">17</span>, <span class="number">18</span>, <span class="number">19</span>, <span class="number">20</span>, <span class="number">16</span>, <span class="number">17</span>, <span class="number">18</span>, <span class="number">19</span>, <span class="number">20</span>, <span class="number">18</span>, <span class="number">19</span>, <span class="number">20</span>)</span><br></pre></td></tr></table></figure>
+
+<p>filter distinct sample 算子是<strong>输入分区是输出分区子集型</strong></p>
+<hr>
+<p>union() : (RDD[T],RDD[U]) =&gt; RDD[T]</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//union(otherDataset)是数据合并，返回一个新的数据集，由原数据集和otherDataset联合而成。</span></span><br><span class="line">    <span class="keyword">val</span> rdd8 = rdd1.union(rdd3)</span><br><span class="line">    rdd8.collect</span><br><span class="line">    res14: <span class="type">Array</span>[<span class="type">Int</span>] = <span class="type">Array</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">12</span>, <span class="number">14</span>, <span class="number">16</span>, <span class="number">18</span>)</span><br></pre></td></tr></table></figure>
+
+<p>cartesian ：(RDD[T],RDD[U]) =&gt; RDD[(T,U)]</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//cartesian(otherDataset)是做笛卡尔积：对于数据集T和U 进行笛卡尔积操作， 得到(T, U)格式的数据集。</span></span><br><span class="line">    <span class="keyword">val</span> rdd17 = rdd1.cartesian(rdd3)</span><br><span class="line">    rdd17.collect</span><br><span class="line">    res39: <span class="type">Array</span>[(<span class="type">Int</span>, <span class="type">Int</span>)] = <span class="type">Array</span>((<span class="number">1</span>,<span class="number">12</span>), (<span class="number">2</span>,<span class="number">12</span>), (<span class="number">3</span>,<span class="number">12</span>), (<span class="number">1</span>,<span class="number">14</span>), (<span class="number">1</span>,<span class="number">16</span>), (<span class="number">1</span>,<span class="number">18</span>), (<span class="number">2</span>,<span class="number">14</span>), (<span class="number">2</span>,<span class="number">16</span>), (<span class="number">2</span>,<span class="number">18</span>), (<span class="number">3</span>,<span class="number">14</span>), (<span class="number">3</span>,<span class="number">16</span>), (<span class="number">3</span>,<span class="number">18</span>), (<span class="number">4</span>,<span class="number">12</span>), (<span class="number">5</span>,<span class="number">12</span>),(<span class="number">6</span>,<span class="number">12</span>), (<span class="number">4</span>,<span class="number">14</span>), (<span class="number">4</span>,<span class="number">16</span>), (<span class="number">4</span>,<span class="number">18</span>), (<span class="number">5</span>,<span class="number">14</span>), (<span class="number">5</span>,<span class="number">16</span>), (<span class="number">5</span>,<span class="number">18</span>), (<span class="number">6</span>,<span class="number">14</span>), (<span class="number">6</span>,<span class="number">16</span>), (<span class="number">6</span>,<span class="number">18</span>), (<span class="number">7</span>,<span class="number">12</span>), (<span class="number">8</span>,<span class="number">12</span>), (<span class="number">9</span>,<span class="number">12</span>), (<span class="number">7</span>,<span class="number">14</span>), (<span class="number">7</span>,<span class="number">16</span>), (<span class="number">7</span>,<span class="number">18</span>), (<span class="number">8</span>,<span class="number">14</span>), (<span class="number">8</span>,<span class="number">16</span>),(<span class="number">8</span>,<span class="number">18</span>), (<span class="number">9</span>,<span class="number">14</span>), (<span class="number">9</span>,<span class="number">16</span>), (<span class="number">9</span>,<span class="number">18</span>))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>union和cartesian算子是<strong>输入分区与输出分区多对一型</strong></p>
+<hr>
+<p>groupBy </p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 接收一个函数，这个函数的返回值作为key，然后通过key对里面的元素进行分组</span></span><br></pre></td></tr></table></figure>
+
+<p>类似于sql的group by，是<strong>输入分区与输出分区多对多型</strong></p>
+<h5 id="key-value型，针对处理的数据项是Value类型的数据"><a href="#key-value型，针对处理的数据项是Value类型的数据" class="headerlink" title="key - value型，针对处理的数据项是Value类型的数据"></a>key - value型，针对处理的数据项是Value类型的数据</h5><p><strong>输入分区与输出分区一对一：</strong></p>
+<p>mapValues(f:V = &gt;W) : RDD[(K,V)] =&gt; Seq[K,W]</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 同map，只不过mapValues针对的是[K,V]中的V进行map操作</span></span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<p><strong>聚集操作：</strong></p>
+<p>reduceByKey(f: (V,V) =&gt; V) : RDD[(K,V)] =&gt; RDD[(K,V)]</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//reduceByKey(func, [numTasks])是数据分组聚合操作，在一个（K,V)对的数据集上使用，返回一个（K,V）对的数据集，key相同的值，都被使用指定的reduce函数聚合到一起。</span></span><br><span class="line">    <span class="keyword">val</span> rdd12 = rdd0.reduceByKey((x,y) =&gt; x + y)</span><br><span class="line">    rdd12.collect</span><br><span class="line">    res34: <span class="type">Array</span>[(<span class="type">Int</span>, <span class="type">Int</span>)] = <span class="type">Array</span>((<span class="number">1</span>,<span class="number">6</span>), (<span class="number">2</span>,<span class="number">6</span>))</span><br></pre></td></tr></table></figure>
+
+<p>groupByKey() : RDD[(K,V)] =&gt; RDD[(K,Seq[V])]</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//groupByKey([numTasks])是数据分组操作，在一个由（K,V）对组成的数据集上调用，返回一个（K,Seq[V])对的数据集。</span></span><br><span class="line">    <span class="keyword">val</span> rdd0 = sc.parallelize(<span class="type">Array</span>((<span class="number">1</span>,<span class="number">1</span>), (<span class="number">1</span>,<span class="number">2</span>) , (<span class="number">1</span>,<span class="number">3</span>) , (<span class="number">2</span>,<span class="number">1</span>) , (<span class="number">2</span>,<span class="number">2</span>) , (<span class="number">2</span>,<span class="number">3</span>)), <span class="number">3</span>)</span><br><span class="line">    <span class="keyword">val</span> rdd11 = rdd0.groupByKey()</span><br><span class="line">    rdd11.collect</span><br><span class="line">    res33: <span class="type">Array</span>[(<span class="type">Int</span>, <span class="type">Iterable</span>[<span class="type">Int</span>])] = <span class="type">Array</span>((<span class="number">1</span>,<span class="type">ArrayBuffer</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)), (<span class="number">2</span>,<span class="type">ArrayBuffer</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>partitionBy(p:Partitioner[K]) : RDD[(K,V)] =&gt; RDD[(K,V)]</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 根据partitioner函数生成新的ShuffleRDD，将原RDD重新分区</span></span><br></pre></td></tr></table></figure>
+
+<p>cogroup() : (RDD[(K,V)],RDD[(K,W)]) =&gt; RDD[(K,(Seq(V),Seq(W)))]</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//cogroup(otherDataset, [numTasks])是将输入数据集(K, V)和另外一个数据集(K, W)进行cogroup，得到一个格式为(K, Seq[V], Seq[W])的数据集。</span></span><br><span class="line">    <span class="keyword">val</span> rdd16 = rdd0.cogroup(rdd0)</span><br><span class="line">    rdd16.collect</span><br><span class="line">    res38: <span class="type">Array</span>[(<span class="type">Int</span>, (<span class="type">Iterable</span>[<span class="type">Int</span>], <span class="type">Iterable</span>[<span class="type">Int</span>]))] = <span class="type">Array</span>((<span class="number">1</span>,(<span class="type">ArrayBuffer</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>),<span class="type">ArrayBuffer</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>))), (<span class="number">2</span>,(<span class="type">ArrayBuffer</span>(<span class="number">1</span>, <span class="number">2</span>,<span class="number">3</span>),<span class="type">ArrayBuffer</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>))))</span><br></pre></td></tr></table></figure>
+
+<p><strong>连接操作：</strong></p>
+<p>join() : (RDD[K,V],RDD[(K,W)]) =&gt; RDD[(K,(V,W))]</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// join(otherDataset, [numTasks])是连接操作，将输入数据集(K,V)和另外一个数据集(K,W)进行Join， 得到(K, (V,W))；该操作是对于相同K的V和W集合进行笛卡尔积 操作，也即V和W的所有组合；</span></span><br><span class="line">    <span class="keyword">val</span> rdd15 = rdd0.join(rdd0)</span><br><span class="line">    rdd15.collect</span><br><span class="line">    res37: <span class="type">Array</span>[(<span class="type">Int</span>, (<span class="type">Int</span>, <span class="type">Int</span>))] = <span class="type">Array</span>((<span class="number">1</span>,(<span class="number">1</span>,<span class="number">1</span>)), (<span class="number">1</span>,(<span class="number">1</span>,<span class="number">2</span>)), (<span class="number">1</span>,(<span class="number">1</span>,<span class="number">3</span>)), (<span class="number">1</span>,(<span class="number">2</span>,<span class="number">1</span>)), (<span class="number">1</span>,(<span class="number">2</span>,<span class="number">2</span>)), (<span class="number">1</span>,(<span class="number">2</span>,<span class="number">3</span>)), (<span class="number">1</span>,(<span class="number">3</span>,<span class="number">1</span>)), (<span class="number">1</span>,(<span class="number">3</span>,<span class="number">2</span>)), (<span class="number">1</span>,(<span class="number">3</span>,<span class="number">3</span>)), (<span class="number">2</span>,(<span class="number">1</span>,<span class="number">1</span>)),(<span class="number">2</span>,(<span class="number">1</span>,<span class="number">2</span>)), (<span class="number">2</span>,(<span class="number">1</span>,<span class="number">3</span>)), (<span class="number">2</span>,(<span class="number">2</span>,<span class="number">1</span>)), (<span class="number">2</span>,(<span class="number">2</span>,<span class="number">2</span>)), (<span class="number">2</span>,(<span class="number">2</span>,<span class="number">3</span>)), (<span class="number">2</span>,(<span class="number">3</span>,<span class="number">1</span>)), (<span class="number">2</span>,(<span class="number">3</span>,<span class="number">2</span>)), (<span class="number">2</span>,(<span class="number">3</span>,<span class="number">3</span>)))</span><br><span class="line">    连接操作除join 外，还有左连接、右连接、全连接操作函数： leftOuterJoin、rightOuterJoin、fullOuterJoin。</span><br></pre></td></tr></table></figure>
+
+<h4 id="Action算子"><a href="#Action算子" class="headerlink" title="Action算子"></a>Action算子</h4><p><strong>无输出：</strong></p>
+<p>foreach</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">foreach(func)是对数据集中的每个元素都执行func函数。不返回RDD和Array，而是返回Uint。</span><br></pre></td></tr></table></figure>
+
+<p><strong>保存到HDFS:</strong></p>
+<p>saveAsTextFile</p>
+<p><strong>scala集合：</strong></p>
+<p>count() : RDD[T] =&gt; Long</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//返回数据集中元素的个数。</span></span><br><span class="line">rdd1.count()</span><br><span class="line">res9: <span class="type">Long</span> = <span class="number">9</span></span><br></pre></td></tr></table></figure>
+
+<p>collect() : RDD[T] =&gt; Seq[T]</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//collect相当于toArray，toArray已经过时不推荐使用，collect将分布式的RDD返回为一个单机的scala Array数组。在这个数组上运用scala的函数式操作。</span></span><br><span class="line">    rdd1.collect()</span><br><span class="line">    res8: <span class="type">Array</span>[<span class="type">Int</span>] = <span class="type">Array</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>)</span><br></pre></td></tr></table></figure>
+
+<p>reduce(f: (T,T) =&gt; T) : RDD[T] =&gt; T</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// collect相当于toArray，toArray已经过时不推荐使用，collect将分布式的RDD返回为一个单机的scala Array数组。在这个数组上运用scala的函数式操作。</span></span><br><span class="line">    rdd1.collect()</span><br><span class="line">    res8: <span class="type">Array</span>[<span class="type">Int</span>] = <span class="type">Array</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>)</span><br></pre></td></tr></table></figure>
+
+<p>collectAsMap</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">collectAsMap对（K，V）型的RDD数据返回一个单机HashMap。对于重复K的RDD元素，后面的元素覆盖前面的元素。</span><br></pre></td></tr></table></figure>
+
+<h4 id="Controller算子"><a href="#Controller算子" class="headerlink" title="Controller算子"></a>Controller算子</h4><p>cache和persist缓存指令</p>
+<ol>
+<li>cache 和 persist 都是用于将一个RDD进行缓存，这样在使用的过程中就不需要重新计算了，大大节省了程序运行时间</li>
+<li>cache只有一个默认的缓存级别 MEMORY_ONLY， cache调用了persist，persist可根据情况设置其他的缓存级别，比如缓存到磁盘。</li>
+</ol>
+<h3 id="三、Spark算子与数据倾斜"><a href="#三、Spark算子与数据倾斜" class="headerlink" title="三、Spark算子与数据倾斜"></a>三、Spark算子与数据倾斜</h3><p>​    数据倾斜只会出现在 shuffle 过程中，可能会触发shuffle操作的算子有：</p>
+<p>​    distinct, groupByKey, reduceByKey, join, cogroup, repartition(coalesce()不涉及到shuffle)</p>
+
       
 
       
@@ -256,11 +329,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">链表</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数学</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Spark</a>
         		</li>
       		
 		</ul>
@@ -272,7 +341,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/数据结构与算法//" class="article-tag-list-link color3">数据结构与算法</a>
+        			<a href="/categories/大数据开发//" class="article-tag-list-link color1">大数据开发</a>
         		</li>
       		
 		</ul>
@@ -327,7 +396,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://github.com/wct1998/wct1998.github.io/2021/05/01/leetcode2/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://github.com/wct1998/wct1998.github.io/2021/09/20/spark-operator-conclusion/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -341,18 +410,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2021/05/01/aim-to-offer03/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          剑指Offer3数组中重复的数字
-        
-      </div>
-    </a>
   
-  
-    <a href="/2021/04/28/how-to-visualize-coocurrence-matrix/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">共现矩阵可视化</div>
+    <a href="/2021/09/03/net-ease-interview/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">网易文本挖掘工程师一面二面【已凉】</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -379,7 +439,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A5%9D%E5%85%A8%E4%B8%96%E7%95%8C%E6%97%A0%E4%BA%A7%E9%98%B6%E7%BA%A7%E8%8A%82%E6%97%A5%E5%BF%AB%E4%B9%90"><span class="toc-number">1.</span> <span class="toc-text">祝全世界无产阶级节日快乐</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="toc-number">2.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%8F%8F%E8%BF%B0"><span class="toc-number">3.</span> <span class="toc-text">输入输出描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%80%83"><span class="toc-number">4.</span> <span class="toc-text">思考</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%EF%BC%9A%E6%A8%A1%E6%8B%9F%E5%88%97%E7%AB%96%E5%BC%8F%E5%8A%A0%E6%B3%95%E8%AE%A1%E7%AE%97"><span class="toc-number">5.</span> <span class="toc-text">代码：模拟列竖式加法计算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C"><span class="toc-number">6.</span> <span class="toc-text">结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%84%E8%AE%BA%E5%8C%BA%E5%A4%A7%E4%BD%AC%EF%BC%88si-ren%EF%BC%89%E7%9A%84%E4%BB%A3%E7%A0%81"><span class="toc-number">7.</span> <span class="toc-text">评论区大佬（si ren）的代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A5%9D%E5%85%A8%E4%B8%96%E7%95%8C%E6%97%A0%E4%BA%A7%E9%98%B6%E7%BA%A7%E5%8A%B3%E5%8A%A8%E8%8A%82%E5%BF%AB%E4%B9%90"><span class="toc-number">8.</span> <span class="toc-text">祝全世界无产阶级劳动节快乐</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%E4%B8%80%E4%B8%8BSpark%E7%AE%97%E5%AD%90%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%8C%E4%B8%BB%E8%A6%81%E6%98%AF%E5%AE%9E%E4%B9%A0%E6%9C%9F%E9%97%B4%E7%94%A8%E5%88%B0%E7%9A%84"><span class="toc-number">1.</span> <span class="toc-text">总结一下Spark算子的使用，主要是实习期间用到的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80-%E3%80%81Spark-RDD"><span class="toc-number">2.</span> <span class="toc-text">一 、Spark RDD</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81-Spark-RDD-%E7%AE%97%E5%AD%90"><span class="toc-number">3.</span> <span class="toc-text">二、 Spark RDD 算子</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Transformations%E7%AE%97%E5%AD%90%EF%BC%8C%E5%B9%B6%E4%B8%8D%E8%A7%A6%E5%8F%91%E6%8F%90%E4%BA%A4%E4%BD%9C%E4%B8%9A"><span class="toc-number">3.1.</span> <span class="toc-text">Transformations算子，并不触发提交作业</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#value%E5%9E%8B%EF%BC%8C%E9%92%88%E5%AF%B9%E5%A4%84%E7%90%86%E7%9A%84%E6%95%B0%E6%8D%AE%E9%A1%B9%E6%98%AFValue%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%95%B0%E6%8D%AE"><span class="toc-number">3.1.1.</span> <span class="toc-text">value型，针对处理的数据项是Value类型的数据</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#key-value%E5%9E%8B%EF%BC%8C%E9%92%88%E5%AF%B9%E5%A4%84%E7%90%86%E7%9A%84%E6%95%B0%E6%8D%AE%E9%A1%B9%E6%98%AFValue%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%95%B0%E6%8D%AE"><span class="toc-number">3.1.2.</span> <span class="toc-text">key - value型，针对处理的数据项是Value类型的数据</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Action%E7%AE%97%E5%AD%90"><span class="toc-number">3.2.</span> <span class="toc-text">Action算子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Controller%E7%AE%97%E5%AD%90"><span class="toc-number">3.3.</span> <span class="toc-text">Controller算子</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81Spark%E7%AE%97%E5%AD%90%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%80%BE%E6%96%9C"><span class="toc-number">4.</span> <span class="toc-text">三、Spark算子与数据倾斜</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -396,8 +456,8 @@
   <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
 <script>
   var cloudTieConfig = {
-    url: "https://github.com/wct1998/wct1998.github.io/2021/05/01/leetcode2/", 
-    sourceId: "leetcode2",
+    url: "https://github.com/wct1998/wct1998.github.io/2021/09/20/spark-operator-conclusion/", 
+    sourceId: "spark-operator-conclusion",
     productKey: "true",
     target: "cloud-tie-wrapper"
   };
